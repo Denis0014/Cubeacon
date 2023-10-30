@@ -28,6 +28,6 @@ public class Cube : MonoBehaviour
 
     public void interactWithPlayer(Vector2 playerDirection)
     {
-        rb.MovePosition(rb.position + new Vector2(0, 1));
+        rb.MovePosition(rb.position + playerDirection);
     }
 }
