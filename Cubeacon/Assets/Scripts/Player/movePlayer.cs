@@ -16,7 +16,15 @@ public class movePlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
+            RaycastHit2D hit = Physics2D.Raycast(rb.position, new Vector2(0, 1), 1, LayerMask.GetMask("Interactive"));
+            if (hit.collider != null)
+            {
+                Cube cube = hit.collider.GetComponent<Cube>();
+                cube.interactWithPlayer(new Vector2(0, 1));
+            }
             rb.MovePosition(rb.position + new Vector2(0, 1) * speed);
+            
+                
         }
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
