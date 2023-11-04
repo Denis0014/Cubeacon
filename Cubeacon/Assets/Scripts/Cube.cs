@@ -26,8 +26,19 @@ public class Cube : MonoBehaviour
         
     }
 
-    public void interactWithPlayer(Vector2 playerDirection)
+    public bool tryToMove(Vector2 playerDirection)
     {
-        rb.MovePosition(rb.position + playerDirection);
+        if (canBeMoved(playerDirection))
+        {
+            rb.MovePosition(rb.position + playerDirection);
+            return true;
+        }
+        return false;
+    }
+
+   private bool canBeMoved(Vector2 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, direction, 1, LayerMask.GetMask("Wall"));
+        return hit.collider == null;
     }
 }
