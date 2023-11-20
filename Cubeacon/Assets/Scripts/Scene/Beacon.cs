@@ -5,6 +5,8 @@ using UnityEngine;
 public class Beacon : MonoBehaviour
 {
     private float spawnTime = 0;
+    public float xSpeed;
+    public float ySpeed;
 
     public GameObject objectToSpawn;
     void Start()
@@ -18,6 +20,8 @@ public class Beacon : MonoBehaviour
         {
             GameObject ray = (GameObject)Instantiate(objectToSpawn, transform.position, objectToSpawn.transform.rotation);
             ray.transform.parent = transform;
+            ray.GetComponent<Beam>().xSpeed = xSpeed;
+            ray.GetComponent<Beam>().ySpeed = ySpeed;
             spawnTime = 0;
         }
         else
