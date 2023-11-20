@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class movePlayer : InteractiveObject
 {
-    public float speed = 1; //��� ��� ����� �����?
     public bool PauseMenu;
     void Update()
     {

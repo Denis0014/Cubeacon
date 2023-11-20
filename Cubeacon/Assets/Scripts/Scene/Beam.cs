@@ -13,7 +13,7 @@ public class Beam : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private bool isBlockedByWall()
+    private bool isBlocked()
     {
         RaycastHit2D hit = Physics2D.Raycast(rb.position, transform.position, 1, LayerMask.GetMask("Wall"));
         if (hit.collider == null)
@@ -26,7 +26,7 @@ public class Beam : MonoBehaviour
     void Update()
     {
         transform.Translate(0.05f, 0, 0);
-        if (isBlockedByWall())
+        if (isBlocked())
             Destroy(transform.gameObject);
     }
 }
