@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - not a mirror
+  - passes the beam
+  - MirrorRU
+  - MirrorLU
+  - MirrorRD
+  - MirrorLD
   layers:
   - Default
   - TransparentFX
@@ -12,8 +18,8 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
-  - 
+  - Player
+  - Light wall
   - 
   - 
   - 

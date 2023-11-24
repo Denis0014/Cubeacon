@@ -34,19 +34,19 @@ public class GamesSettings : MonoBehaviour
         dropdown.AddOptions(resolutions);
     }
 
-    public void AudioVolume(float sliderValue)
+    public void AudioVolume(Slider slider)
     {
-        am.SetFloat("Master", sliderValue);
+        am.SetFloat("MasterVolume", slider.value);
     }
 
-    public void MusicVolume(float sliderValue)
+    public void MusicVolume(Slider slider)
     {
-        am.SetFloat("Music", sliderValue);
+        am.SetFloat("MusicVolume", slider.value);
     }
 
-    public void SFXVolume(float sliderValue)
+    public void SFXVolume(Slider slider)
     {
-        am.SetFloat("SFX", sliderValue);
+        am.SetFloat("SFXVolume", slider.value);
     }
 
     public void FullScreenToggle()
