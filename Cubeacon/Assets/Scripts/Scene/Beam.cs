@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class Beam : MonoBehaviour
     public float xSpeed;
     public float ySpeed;
     public float lifeTime;
+    private float time;
+    private bool isReflected;
 
     void Awake()
     {
@@ -16,10 +19,11 @@ public class Beam : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    
+
     void Update()
     {
-        transform.Translate(xSpeed, ySpeed, 0);
+        time = Time.deltaTime;
+        transform.Translate(xSpeed * time, ySpeed * time, 0);
         if (isBlocked())
             Destroy(transform.gameObject);
         lifeTime -= Time.deltaTime;
@@ -27,10 +31,21 @@ public class Beam : MonoBehaviour
             Destroy(transform.gameObject);
 
         Finish();
-        
-        RaycastHit2D hit = Physics2D.Raycast(rb.position, new Vector3(xSpeed, ySpeed, 0), 0.05f, LayerMask.GetMask("Interactive"));
+
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, new Vector3(xSpeed * time, ySpeed * time, 0), Math.Abs((xSpeed + ySpeed) * time), LayerMask.GetMask("Interactive"));
         if (hit.collider == null)
             return;
+
+        if (!isReflected)
+        {
+            Vector3 vector3 = hit.collider.gameObject.transform.position;
+            transform.position = vector3;
+            isReflected = true;
+        }
+        else
+        {
+            isReflected = false;
+        }
 
         switch (hit.collider.gameObject.tag)
         {
@@ -86,7 +101,7 @@ public class Beam : MonoBehaviour
                 }
                 break;
         }
-        
+
     }
 
     private bool isBlocked()
