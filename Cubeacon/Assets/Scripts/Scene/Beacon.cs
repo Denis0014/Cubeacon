@@ -9,14 +9,10 @@ public class Beacon : MonoBehaviour
     public float ySpeed;
 
     public GameObject objectToSpawn;
-    void Start()
-    {
-
-    }
 
     void Update()
     {
-        if (spawnTime > 0.001)
+        if (spawnTime > 0.0001)
         {
             GameObject ray = (GameObject)Instantiate(objectToSpawn, transform.position, objectToSpawn.transform.rotation);
             ray.transform.parent = transform;
