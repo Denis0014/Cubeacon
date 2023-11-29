@@ -30,7 +30,7 @@ public class movePlayer : InteractiveObject
             }
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
-                tryToMove(new Vector2(0, -1));
+                if (tryToMove(new Vector2(0, -1)))
                 animator.SetTrigger("Down");
             }
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
