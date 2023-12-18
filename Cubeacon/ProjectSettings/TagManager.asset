@@ -6,10 +6,7 @@ TagManager:
   tags:
   - not a mirror
   - passes the beam
-  - MirrorRU
-  - MirrorLU
-  - MirrorRD
-  - MirrorLD
+  - Mirror
   layers:
   - Default
   - TransparentFX
