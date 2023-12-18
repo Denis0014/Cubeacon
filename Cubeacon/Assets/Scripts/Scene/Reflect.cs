@@ -19,13 +19,15 @@ public class Reflect : Beacon
         {
             l.startWidth = 0.1f;
             l.endWidth = 0.1f;
-            Ray();
+            EmitRay();
         }
+
         else
         {
             l.startWidth = 0f;
             l.endWidth = 0f;
         }
+
         isReflect = false;
     }
 }
