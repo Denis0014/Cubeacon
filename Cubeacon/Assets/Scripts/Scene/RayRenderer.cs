@@ -5,15 +5,10 @@ using UnityEngine;
 
 public class RayRenderer
 {
-    public float xSpeed;
-    public float ySpeed;
-    public LineRenderer l;
-    public Transform transform;
-
-    public RayRenderer()
-    {
-
-    }
+    private float xSpeed;
+    private float ySpeed;
+    private LineRenderer l;
+    private Transform transform;
 
     public RayRenderer(float xSpeed, float ySpeed, LineRenderer l, Transform transform)
     {
@@ -29,7 +24,7 @@ public class RayRenderer
 
         if (hit.collider != null)
         {
-            DrawRayToObstacle(hit, transform);
+            DrawRayToObstacle(hit);
 
             if (hit.collider.gameObject.tag == "Mirror")
             {
@@ -45,7 +40,7 @@ public class RayRenderer
 
         else
         {
-            DrawRayToInfinity(transform);
+            DrawRayToInfinity();
         }
     }
 
@@ -76,7 +71,7 @@ public class RayRenderer
         return Physics2D.Raycast(transform.position + new Vector3(Math.Sign(xSpeed) * 0.5f, Math.Sign(ySpeed) * 0.5f, 0), new Vector3(xSpeed, ySpeed, 0), Mathf.Infinity, LayerMask.GetMask(mask));
     }
 
-    public void DrawRayToObstacle(RaycastHit2D hit, Transform transform)
+    private void DrawRayToObstacle(RaycastHit2D hit)
     {
         l.SetPositions(new Vector3[2]
         {
@@ -85,7 +80,7 @@ public class RayRenderer
         });
     }
 
-    public void DrawRayToInfinity(Transform transform)
+    private void DrawRayToInfinity()
     {
         l.SetPositions(new Vector3[2] { transform.position, transform.position + new Vector3(xSpeed, ySpeed, 0) * 1000 });
     }

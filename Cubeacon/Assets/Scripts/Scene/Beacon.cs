@@ -7,7 +7,7 @@ public class Beacon : MonoBehaviour
 {
     public float xSpeed;
     public float ySpeed;
-    public RayRenderer r;
+    protected RayRenderer r;
 
     void Start()
     {

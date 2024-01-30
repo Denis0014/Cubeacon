@@ -30,13 +30,13 @@ public class Reflective : Beacon
         isReflect = false;
     }
 
-    virtual public void ReflectRay(RayRenderer r)
+    virtual public void ReflectRay(RayRenderer incomingRay)
     {
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         isReflect = true;
         int s = (spriteRenderer.flipX == spriteRenderer.flipY) ? 1 : -1;
 
-        this.r.Reflect(r, s);
+        r.Reflect(incomingRay, s);
     }
 }

@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Divider : Reflective
 {
-    public RayRenderer r2;
-
-    protected void EmitSecondRay()
-    {
-
-    }
+    private RayRenderer r2;
 
     void Start()
     {
@@ -24,16 +19,14 @@ public class Divider : Reflective
     {
         if (isReflect)
         {
-            r.l.startWidth = 0.1f;
-            r.l.endWidth = 0.1f;
+            r.Width(0.1f);
             r.EmitRay();
             r2.EmitRay();
         }
 
         else
         {
-            r.l.startWidth = 0f;
-            r.l.endWidth = 0f;
+            r.Width(0f);
         }
 
         isReflect = false;
