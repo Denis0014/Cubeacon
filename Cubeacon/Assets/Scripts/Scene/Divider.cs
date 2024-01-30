@@ -2,41 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reflective : Beacon
+public class Divider : Reflective
 {
-    public bool isReflect;
+    public RayRenderer r2;
+
+    protected void EmitSecondRay()
+    {
+
+    }
 
     void Start()
     {
         LineRenderer l = gameObject.AddComponent<LineRenderer>();
         l.useWorldSpace = true;
         r = new RayRenderer(xSpeed, ySpeed, l, transform);
+
+        r2 = new RayRenderer(xSpeed, -ySpeed, l, transform);
     }
 
     void Update()
     {
-
         if (isReflect)
         {
-            r.Width(0.1f);
+            r.l.startWidth = 0.1f;
+            r.l.endWidth = 0.1f;
             r.EmitRay();
+            r2.EmitRay();
         }
 
         else
         {
-            r.Width(0f);
+            r.l.startWidth = 0f;
+            r.l.endWidth = 0f;
         }
 
         isReflect = false;
-    }
-
-    virtual public void ReflectRay(RayRenderer r)
-    {
-        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-
-        isReflect = true;
-        int s = (spriteRenderer.flipX == spriteRenderer.flipY) ? 1 : -1;
-
-        this.r.Reflect(r, s);
     }
 }
