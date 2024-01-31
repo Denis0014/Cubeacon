@@ -19,6 +19,7 @@ public class Divider : Reflective
     {
         SetRayPosition();
         EmitRay();
+        isReflect = false;
     }
 
     protected override void SetRayPosition()
@@ -41,5 +42,21 @@ public class Divider : Reflective
         {
             r2.Width(0f);
         }
+    }
+
+    public override void ReflectRay(RayRenderer incomingRay)
+    {
+        base.ReflectRay(incomingRay);
+
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        isReflect = true;
+
+        if (spriteRenderer.flipX == spriteRenderer.flipY)
+            r2.ReflectRight(incomingRay);
+        else
+            r2.ReflectLeft(incomingRay);
+
+        r2.transform.position = gameObject.transform.position;
     }
 }

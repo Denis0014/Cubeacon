@@ -1962,7 +1962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339623430}
   - component: {fileID: 339623431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wall1
   m_TagString: not a mirror
   m_Icon: {fileID: 0}
@@ -4465,7 +4465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724511325}
   - component: {fileID: 724511326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wall2
   m_TagString: not a mirror
   m_Icon: {fileID: 0}
@@ -7851,7 +7851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1530016613}
   - component: {fileID: 1530016614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wall1
   m_TagString: not a mirror
   m_Icon: {fileID: 0}

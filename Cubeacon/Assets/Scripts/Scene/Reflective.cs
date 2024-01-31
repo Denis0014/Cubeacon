@@ -26,7 +26,7 @@ public class Reflective : Beacon
         }
     }
 
-    public void ReflectRay(RayRenderer incomingRay)
+    public virtual void ReflectRay(RayRenderer incomingRay)
     {
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
@@ -36,6 +36,7 @@ public class Reflective : Beacon
             r.ReflectLeft(incomingRay);
         else
             r.ReflectRight(incomingRay);
-    }
 
+        r.transform.position = gameObject.transform.position;
+    }
 }
