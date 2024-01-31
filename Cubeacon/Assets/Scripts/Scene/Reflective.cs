@@ -6,28 +6,37 @@ public class Reflective : Beacon
 {
     public bool isReflect;
 
-    void Start()
+    protected override void Update()
     {
-        l = gameObject.AddComponent<LineRenderer>();
-        l.useWorldSpace = true;
+        base.Update();
+        isReflect = false;
     }
 
-    void Update()
+    protected override void EmitRay()
     {
-
         if (isReflect)
         {
-            l.startWidth = 0.1f;
-            l.endWidth = 0.1f;
-            EmitRay();
+            r.Width(0.1f);
+            r.EmitRay();
         }
 
         else
         {
-            l.startWidth = 0f;
-            l.endWidth = 0f;
+            r.Width(0f);
         }
+    }
 
-        isReflect = false;
+    public virtual void ReflectRay(RayRenderer incomingRay)
+    {
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        isReflect = true;
+
+        if (spriteRenderer.flipX == spriteRenderer.flipY)
+            r.ReflectLeft(incomingRay);
+        else
+            r.ReflectRight(incomingRay);
+
+        r.transform.position = gameObject.transform.position;
     }
 }
