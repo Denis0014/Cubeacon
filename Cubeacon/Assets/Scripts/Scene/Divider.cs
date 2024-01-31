@@ -6,29 +6,40 @@ public class Divider : Reflective
 {
     private RayRenderer r2;
 
-    void Start()
+    protected override void CreateRays()
     {
-        LineRenderer l = gameObject.AddComponent<LineRenderer>();
-        l.useWorldSpace = true;
-        r = new RayRenderer(xSpeed, ySpeed, l, transform);
+        base.CreateRays();
 
-        r2 = new RayRenderer(xSpeed, -ySpeed, l, transform);
+        GameObject rayObject2 = Instantiate(rayPrefab, transform.position, Quaternion.identity);
+        r2 = rayObject2.GetComponent<RayRenderer>();
+        r2.SetSpeed(xSpeed, -ySpeed);
     }
 
-    void Update()
+    protected override void Update()
     {
+        SetRayPosition();
+        EmitRay();
+    }
+
+    protected override void SetRayPosition()
+    {
+        base.SetRayPosition();
+        r2.SetPosition(transform);
+    }
+
+    protected override void EmitRay()
+    {
+        base.EmitRay();
+
         if (isReflect)
         {
-            r.Width(0.1f);
-            r.EmitRay();
+            r2.Width(0.1f);
             r2.EmitRay();
         }
 
         else
         {
-            r.Width(0f);
+            r2.Width(0f);
         }
-
-        isReflect = false;
     }
 }

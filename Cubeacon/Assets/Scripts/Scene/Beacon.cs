@@ -8,16 +8,32 @@ public class Beacon : MonoBehaviour
     public float xSpeed;
     public float ySpeed;
     protected RayRenderer r;
+    public GameObject rayPrefab;
 
-    void Start()
+    protected virtual void Start()
     {
-        LineRenderer l = gameObject.AddComponent<LineRenderer>();
-        l.startWidth = 0.1f;
-        l.endWidth = 0.1f;
-        l.useWorldSpace = true;
-        r = new RayRenderer(xSpeed, ySpeed, l, transform);
+        CreateRays();
     }
-    void Update()
+
+    protected virtual void CreateRays()
+    {
+        GameObject rayObject = Instantiate(rayPrefab, transform.position, Quaternion.identity);
+        r = rayObject.GetComponent<RayRenderer>();
+        r.SetSpeed(xSpeed, ySpeed);
+    }
+
+    protected virtual void Update()
+    {
+        SetRayPosition();
+        EmitRay();
+    }
+
+    protected virtual void SetRayPosition()
+    {
+        r.SetPosition(transform);
+    }
+
+    protected virtual void EmitRay()
     {
         r.EmitRay();
     }

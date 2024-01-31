@@ -3,26 +3,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RayRenderer
+public class RayRenderer : MonoBehaviour
 {
     private float xSpeed;
     private float ySpeed;
     private LineRenderer l;
-    private Transform transform;
 
-    public RayRenderer(float xSpeed, float ySpeed, LineRenderer l, Transform transform)
+    void Start()
+    {
+        l = gameObject.AddComponent<LineRenderer>();
+        l.startWidth = 0.1f;
+        l.endWidth = 0.1f;
+        l.useWorldSpace = true;
+    }
+
+    public void SetSpeed(float xSpeed, float ySpeed)
     {
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
-        this.l = l;
-        this.transform = transform;
+    }
+
+    public void ReflectLeft(RayRenderer other)
+    {
+        xSpeed = other.ySpeed;
+        ySpeed = other.xSpeed;
+    }
+    public void ReflectRight(RayRenderer other)
+    {
+        xSpeed = -other.ySpeed;
+        ySpeed = -other.xSpeed;
+    }
+
+    public void SetPosition(Transform transform)
+    {
+        transform.position = transform.position;
     }
 
     public void EmitRay()
     {
         RaycastHit2D hit = GetClosestObjectHit();
 
-        if (hit.collider != null)
+        if (hit.collider == null)
+        {
+            DrawRayToInfinity();
+        }
+
+        else
         {
             DrawRayToObstacle(hit);
 
@@ -38,10 +64,6 @@ public class RayRenderer
             }
         }
 
-        else
-        {
-            DrawRayToInfinity();
-        }
     }
 
     private RaycastHit2D GetClosestObjectHit()
@@ -89,11 +111,5 @@ public class RayRenderer
     {
         l.startWidth = width;
         l.endWidth = width;
-    }
-
-    public void Reflect(RayRenderer other, int flip)
-    {
-        xSpeed = other.ySpeed * flip;
-        ySpeed = other.xSpeed * flip;
     }
 }

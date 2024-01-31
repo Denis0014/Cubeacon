@@ -2934,6 +2934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: -1
+  rayPrefab: {fileID: 7799693208142956098, guid: fc5d816e869ecbc458c3547762dca823, type: 3}
   isReflect: 0
 --- !u!1 &496853982
 GameObject:
@@ -6178,6 +6179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 1
   ySpeed: 0
+  rayPrefab: {fileID: 7799693208142956098, guid: fc5d816e869ecbc458c3547762dca823, type: 3}
 --- !u!1 &1111460431
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,6 +9472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: -1
+  rayPrefab: {fileID: 7799693208142956098, guid: fc5d816e869ecbc458c3547762dca823, type: 3}
   isReflect: 0
 --- !u!1 &1974027360
 GameObject:

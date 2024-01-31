@@ -6,16 +6,14 @@ public class Reflective : Beacon
 {
     public bool isReflect;
 
-    void Start()
+    protected override void Update()
     {
-        LineRenderer l = gameObject.AddComponent<LineRenderer>();
-        l.useWorldSpace = true;
-        r = new RayRenderer(xSpeed, ySpeed, l, transform);
+        base.Update();
+        isReflect = false;
     }
 
-    void Update()
+    protected override void EmitRay()
     {
-
         if (isReflect)
         {
             r.Width(0.1f);
@@ -26,17 +24,18 @@ public class Reflective : Beacon
         {
             r.Width(0f);
         }
-
-        isReflect = false;
     }
 
-    virtual public void ReflectRay(RayRenderer incomingRay)
+    public void ReflectRay(RayRenderer incomingRay)
     {
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         isReflect = true;
-        int s = (spriteRenderer.flipX == spriteRenderer.flipY) ? 1 : -1;
 
-        r.Reflect(incomingRay, s);
+        if (spriteRenderer.flipX == spriteRenderer.flipY)
+            r.ReflectLeft(incomingRay);
+        else
+            r.ReflectRight(incomingRay);
     }
+
 }
