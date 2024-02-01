@@ -10,7 +10,7 @@ public class Beacon : MonoBehaviour
     protected RayRenderer r;
     public GameObject rayPrefab;
 
-    protected virtual void Start()
+    void Start()
     {
         CreateRays();
     }
@@ -24,13 +24,7 @@ public class Beacon : MonoBehaviour
 
     protected virtual void Update()
     {
-        SetRayPosition();
         EmitRay();
-    }
-
-    protected virtual void SetRayPosition()
-    {
-        r.SetPosition(transform);
     }
 
     protected virtual void EmitRay()

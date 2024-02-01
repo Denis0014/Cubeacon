@@ -37,6 +37,6 @@ public class Reflective : Beacon
         else
             r.ReflectRight(incomingRay);
 
-        r.transform.position = gameObject.transform.position;
+        r.SetPosition(transform);
     }
 }

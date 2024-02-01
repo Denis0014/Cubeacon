@@ -15,19 +15,6 @@ public class Divider : Reflective
         r2.SetSpeed(xSpeed, -ySpeed);
     }
 
-    protected override void Update()
-    {
-        SetRayPosition();
-        EmitRay();
-        isReflect = false;
-    }
-
-    protected override void SetRayPosition()
-    {
-        base.SetRayPosition();
-        r2.SetPosition(transform);
-    }
-
     protected override void EmitRay()
     {
         base.EmitRay();
@@ -50,13 +37,11 @@ public class Divider : Reflective
 
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
-        isReflect = true;
-
         if (spriteRenderer.flipX == spriteRenderer.flipY)
             r2.ReflectRight(incomingRay);
         else
             r2.ReflectLeft(incomingRay);
 
-        r2.transform.position = gameObject.transform.position;
+        r2.SetPosition(transform);
     }
 }

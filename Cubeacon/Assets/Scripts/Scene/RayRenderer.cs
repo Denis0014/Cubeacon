@@ -36,7 +36,7 @@ public class RayRenderer : MonoBehaviour
 
     public void SetPosition(Transform transform)
     {
-        transform.position = transform.position;
+        this.transform.position = transform.position;
     }
 
     public void EmitRay()
