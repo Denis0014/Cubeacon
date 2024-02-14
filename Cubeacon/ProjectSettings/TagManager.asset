@@ -7,6 +7,7 @@ TagManager:
   - not a mirror
   - passes the beam
   - Mirror
+  - Switch
   layers:
   - Default
   - TransparentFX

@@ -62,6 +62,11 @@ public class RayRenderer : MonoBehaviour
             {
                 hit.collider.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
+
+            else if (hit.collider.gameObject.tag == "Switch")
+            {
+                hit.collider.gameObject.GetComponent<Switch>().activated = true;
+            }
         }
 
     }
