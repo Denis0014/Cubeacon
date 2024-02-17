@@ -6,11 +6,13 @@ public class InteractiveObject : MonoBehaviour
 {
     private Collider2D col;
     private Rigidbody2D rb;
+    private int interactiveLayers;
 
     void Awake()
     {
         col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        interactiveLayers = LayerMask.GetMask("Blocks light", "Mirror", "Passes light", "Switch");
     }
 
     protected bool tryToMove(Vector2 direction)
@@ -30,16 +32,20 @@ public class InteractiveObject : MonoBehaviour
 
     private bool isBlockedByWall(Vector2 direction)
     {
-        RaycastHit2D hit = Physics2D.Raycast(rb.position, direction, 1, LayerMask.GetMask("Wall"));
-        return hit.collider != null;
+        Vector2 rayStart = rb.position + new Vector2(0.5f, 0.5f) * direction;
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, direction, 1, interactiveLayers);
+
+        if (hit.collider != null && hit.collider.tag == "Blocks movement")
+            return true;
+        return false;
     }
 
     private InteractiveObject InteractiveObjectOnTheWay(Vector2 direction)
     {
-        Vector2 rayStart = rb.position + new Vector2(0.5f, 0.5f) * direction;
+        Vector2 rayStart = rb.position + new Vector2(0.6f, 0.6f) * direction;
 
-        RaycastHit2D hit = Physics2D.Raycast(rayStart, direction, 1, LayerMask.GetMask("Interactive"));
-        if (hit.collider != null)
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, direction, 0.5f, interactiveLayers);
+        if (hit.collider != null && hit.collider.tag == "Moveable")
         {
             InteractiveObject obj = hit.collider.GetComponent<InteractiveObject>();
             return obj;

@@ -8,6 +8,8 @@ TagManager:
   - passes the beam
   - Mirror
   - Switch
+  - Blocks movement
+  - Moveable
   layers:
   - Default
   - TransparentFX
@@ -17,11 +19,11 @@ TagManager:
   - UI
   - Wall
   - Player
-  - Light wall
+  - Blocks light
   - PostProcessing
-  - 
-  - 
-  - 
+  - Mirror
+  - Passes light
+  - Switch
   - 
   - 
   - 
