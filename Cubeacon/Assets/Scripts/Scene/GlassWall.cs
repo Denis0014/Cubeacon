@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GlassWall : WiringSys
+{
+    override protected void Start()
+    {
+        activate_color = new Color32(0, 150, 255, 150);
+        inactive_color = new Color32(150, 150, 150, 255);
+        base.Start();
+    }
+
+    override protected void Update()
+    {
+        if (activated && gameObject.layer == LayerMask.NameToLayer("Blocks light"))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Passes light");
+        }
+        else if (!activated && gameObject.layer == LayerMask.NameToLayer("Passes light"))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Blocks light");
+        }
+    }
+}
