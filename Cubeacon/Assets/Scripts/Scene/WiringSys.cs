@@ -6,6 +6,8 @@ public abstract class WiringSys : MonoBehaviour
 {
     public bool activated;
     public List<GameObject> links;
+    public Vector3 start_pos;
+    public List<Vector3> end_poses;
     public Material material;
     protected List<GameObject> wires;
     protected Color32 activate_wires_color = new Color32(128, 48, 48, 255);
@@ -28,7 +30,7 @@ public abstract class WiringSys : MonoBehaviour
             l.endColor = Color.white;
             l.textureMode = LineTextureMode.Tile;
             //Debug.Log(links[i].transform.position);
-            l.SetPositions(new Vector3[2] { transform.position, links[i].transform.position });
+            l.SetPositions(new Vector3[2] { transform.position + start_pos, links[i].transform.position + end_poses[i] });
             wires.Add(w);
         }
     }
