@@ -12,6 +12,9 @@ public class RayRenderer : MonoBehaviour
     void Start()
     {
         l = gameObject.AddComponent<LineRenderer>();
+        var DefaultMaterial = new Material(Shader.Find("Unlit/Texture"));
+        l.material = DefaultMaterial;
+        l.material.SetColor("_EmissionColor", new Color32(255, 255, 255, 255));
         l.startWidth = 0.1f;
         l.endWidth = 0.1f;
         l.useWorldSpace = true;
@@ -58,14 +61,9 @@ public class RayRenderer : MonoBehaviour
                 reflect.ReflectRay(this);
             }
 
-            else if (hit.collider.gameObject.tag == "Finish")
-            {
-                hit.collider.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-
             else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Switch"))
             {
-                hit.collider.gameObject.GetComponent<Switch>().activated = true;
+                hit.collider.gameObject.GetComponent<WiringSys>().activated = hit.collider.gameObject.GetComponent<WiringSys>().signal_type;
             }
         }
 

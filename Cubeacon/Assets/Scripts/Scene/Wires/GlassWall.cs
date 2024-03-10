@@ -6,8 +6,8 @@ public class GlassWall : WiringSys
 {
     override protected void Start()
     {
-        activate_color = new Color32(0, 150, 255, 150);
-        inactive_color = new Color32(150, 150, 150, 255);
+        activated_color = new Color32(0, 150, 255, 150);
+        deactivated_color = new Color32(150, 150, 150, 255);
         base.Start();
     }
 

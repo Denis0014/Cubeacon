@@ -4,16 +4,17 @@ using UnityEngine;
 
 public abstract class WiringSys : MonoBehaviour
 {
+    public bool signal_type;
     public bool activated;
     public List<GameObject> links;
     public Vector3 start_pos;
     public List<Vector3> end_poses;
     public Material material;
     protected List<GameObject> wires;
-    protected Color32 activate_wires_color = new Color32(128, 48, 48, 255);
-    protected Color32 inactive_wires_color = new Color32(32, 96, 32, 255);
-    protected Color32 activate_color = new Color32(0, 255, 0, 255);
-    protected Color32 inactive_color = new Color32(255, 255, 255, 255);
+    protected Color32 activated_wires_color = new Color32(128, 48, 48, 255);
+    protected Color32 deactivated_wires_color = new Color32(32, 96, 32, 255);
+    protected Color32 activated_color = new Color32(0, 255, 0, 255);
+    protected Color32 deactivated_color = new Color32(255, 255, 255, 255);
 
     virtual protected void Start()
     {
@@ -39,22 +40,25 @@ public abstract class WiringSys : MonoBehaviour
     {
         if (activated)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = activate_color;
+            gameObject.GetComponent<SpriteRenderer>().color = activated_color;
             for (int i = 0; i < links.Count; i++)
             {
                 links[i].GetComponent<WiringSys>().activated = true;
-                wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", activate_wires_color);
+                wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", activated_wires_color);
             }
-            activated = false;
+            if (signal_type)
+                activated = false;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().color = inactive_color;
+            gameObject.GetComponent<SpriteRenderer>().color = deactivated_color;
             for (int i = 0; i < links.Count; i++)
             {
                 links[i].GetComponent<WiringSys>().activated = false;
-                wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", inactive_wires_color);
+                wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", deactivated_wires_color);
             }
+            if (!signal_type)
+                activated = true;
         }
     }
 }
