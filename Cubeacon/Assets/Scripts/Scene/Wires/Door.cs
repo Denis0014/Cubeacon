@@ -33,4 +33,8 @@ public class Door : WiringSys
             gameObject.tag = "Blocks movement";
         }
     }
+
+    protected override void Update_pos()
+    {
+    }
 }

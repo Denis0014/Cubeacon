@@ -10,4 +10,8 @@ public class Switch : WiringSys
         deactivated_color = new Color32(255, 255, 255, 255);
         base.Start();
     }
+
+    protected override void Update_pos()
+    {
+    }
 }

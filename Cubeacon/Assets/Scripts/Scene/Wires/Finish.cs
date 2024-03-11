@@ -22,4 +22,8 @@ public class Finish : WiringSys
             Debug.Log("Win");
         }
     }
+
+    protected override void Update_pos()
+    {
+    }
 }
