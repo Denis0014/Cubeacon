@@ -16,20 +16,25 @@ public class Door : WiringSys
 
     override protected void Update()
     {
-        if (activated)
+        if (activated == signal_type)
         {
             gameObject.layer = 11;
             gameObject.GetComponent<SpriteRenderer>().size = new Vector2(0.3f, 0.3f);
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(0, 0);
             gameObject.transform.position = pos1;
-            gameObject.tag = "Respawn";
-
+            gameObject.tag = "Untagged";
         }
         else
         {
             gameObject.layer = 8;
             gameObject.GetComponent<SpriteRenderer>().size = new Vector2(0.3f, 1f);
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(0.3f, 1f);
             gameObject.transform.position = pos0;
             gameObject.tag = "Blocks movement";
         }
+    }
+
+    protected override void Update_pos()
+    {
     }
 }

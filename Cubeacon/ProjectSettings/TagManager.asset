@@ -4,10 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - not a mirror
-  - passes the beam
-  - Mirror
-  - Switch
   - Blocks movement
   - Moveable
   layers:

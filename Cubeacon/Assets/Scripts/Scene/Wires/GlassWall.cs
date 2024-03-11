@@ -6,8 +6,9 @@ public class GlassWall : WiringSys
 {
     override protected void Start()
     {
-        activate_color = new Color32(0, 150, 255, 150);
-        inactive_color = new Color32(150, 150, 150, 255);
+        activated_color = new Color32(0, 150, 255, 150);
+        deactivated_color = new Color32(150, 150, 150, 255);
+        gameObject.GetComponent<SpriteRenderer>().size = new Vector2(0.3f, 1.2f);
         base.Start();
     }
 
@@ -21,5 +22,10 @@ public class GlassWall : WiringSys
         {
             gameObject.layer = LayerMask.NameToLayer("Blocks light");
         }
+        base.Update();
+    }
+
+    protected override void Update_pos()
+    {
     }
 }
