@@ -60,7 +60,7 @@ public class RayRenderer : MonoBehaviour
 
             else if (hit.collider.gameObject.tag == "Finish")
             {
-                hit.collider.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                hit.collider.GetComponent<Finish>().FinishLevel();
             }
         }
 
