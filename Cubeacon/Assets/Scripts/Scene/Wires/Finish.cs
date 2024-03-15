@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Finish : WiringSys
 {
+    private bool alreadyFinished;
+
+    public void FinishLevel()
+    {
+        SaveLoadSystem.SaveThisLevel();
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -14,13 +21,14 @@ public class Finish : WiringSys
 
     protected override void Update()
     {
-        base.Update();
-        if (activated)
+        if (activated && !alreadyFinished)
         {
-            // TODO: Сохраниение
-            // TODO: Спрайты
+            FinishLevel();
+            alreadyFinished = true;
             Debug.Log("Win");
+            Debug.Log(SaveLoadSystem.LoadLevelsCompleted());
         }
+        base.Update();
     }
 
     protected override void Update_pos()
