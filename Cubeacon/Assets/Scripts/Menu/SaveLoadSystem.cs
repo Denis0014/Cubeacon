@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public static class SaveLoadSystem
 {
     static string levelsCompletedPath = Application.dataPath + "/levelscompleted.dat";
 
-    public static void Save(int levesCompleted)
+    public static void SaveThisLevel()
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(levelsCompletedPath);
 
-        bf.Serialize(file, levesCompleted);
+        int levelsCompleted = SceneManager.GetActiveScene().buildIndex;
+        bf.Serialize(file, levelsCompleted);
         file.Close();
     }
 
