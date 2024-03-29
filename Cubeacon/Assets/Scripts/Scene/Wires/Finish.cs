@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Finish : WiringSys
 {
@@ -9,6 +10,12 @@ public class Finish : WiringSys
     public void FinishLevel()
     {
         SaveLoadSystem.SaveThisLevel();
+        alreadyFinished = true;
+
+        Debug.Log("Win");
+        Debug.Log(SaveLoadSystem.LoadLevelsCompleted());
+
+        SaveLoadSystem.LoadLevelSelectScreen();
     }
 
     protected override void Start()
@@ -23,9 +30,6 @@ public class Finish : WiringSys
         if (activated && !alreadyFinished)
         {
             FinishLevel();
-            alreadyFinished = true;
-            Debug.Log("Win");
-            Debug.Log(SaveLoadSystem.LoadLevelsCompleted());
         }
         base.Update();
     }

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public static class SaveLoadSystem
 {
+    const int LEVEL_SELECT_SCREEN_INDEX = 1;
     static string levelsCompletedPath = Application.dataPath + "/levelscompleted.dat";
 
     public static void SaveThisLevel()
@@ -29,5 +30,10 @@ public static class SaveLoadSystem
         }
 
         return 0;
+    }
+
+    public static void LoadLevelSelectScreen()
+    {
+        SceneManager.LoadScene(LEVEL_SELECT_SCREEN_INDEX);
     }
 }
