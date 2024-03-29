@@ -7,7 +7,6 @@ public class Door : WiringSys
 {
     private Vector3 pos1;
     private Vector3 pos0;
-    public GameObject ToDestroy;
     override protected void Start()
     {
         pos1 = gameObject.transform.position + new Vector3(0f, 1f, 0f);
@@ -22,7 +21,6 @@ public class Door : WiringSys
             gameObject.layer = 11;
             gameObject.transform.position = pos1;
             gameObject.tag = "Untagged";
-            Destroy(ToDestroy);
         }
         else
         {

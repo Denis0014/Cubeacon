@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class WiringSys : MonoBehaviour
@@ -38,7 +40,7 @@ public abstract class WiringSys : MonoBehaviour
             l.endColor = Color.white;
             l.textureMode = LineTextureMode.Tile;
             //Debug.Log(links[i].transform.position);
-            l.SetPositions(new Vector3[2] { transform.position + start_pos, links[i].transform.position + end_poses[i] });
+            l.SetPositions(new Vector3[2] { transform.position + start_pos, links[i].transform.position + end_poses.ElementAtOrDefault(i) });
             wires.Add(w);
         }
     }
@@ -53,6 +55,13 @@ public abstract class WiringSys : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_on;
             for (int i = 0; i < links.Count; i++)
             {
+                if (links[i].IsDestroyed())
+                {
+                    Destroy(wires[i]);
+                    links.RemoveAt(i);
+                    wires.RemoveAt(i);
+                    return;
+                }
                 links[i].GetComponent<WiringSys>().activated = true;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", activated_wires_color);
             }
@@ -66,6 +75,13 @@ public abstract class WiringSys : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_off;
             for (int i = 0; i < links.Count; i++)
             {
+                if (links[i].IsDestroyed())
+                {
+                    Destroy(wires[i]);
+                    links.RemoveAt(i);
+                    wires.RemoveAt(i);
+                    return;
+                }
                 links[i].GetComponent<WiringSys>().activated = false;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", deactivated_wires_color);
             }
@@ -76,7 +92,7 @@ public abstract class WiringSys : MonoBehaviour
 
     virtual protected void Update_pos()
     {
-        for (int i = 0; i < links.Count; i++)
+        for (int i = 0; i < end_poses.Count; i++)
         {
             wires[i].GetComponent<LineRenderer>().SetPositions(new Vector3[2] { transform.position + start_pos, links[i].transform.position + end_poses[i] });
         }
