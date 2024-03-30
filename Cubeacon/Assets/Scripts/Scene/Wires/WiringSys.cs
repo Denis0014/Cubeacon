@@ -8,6 +8,8 @@ public abstract class WiringSys : MonoBehaviour
 {
     public bool signal_type;
     public bool activated;
+    public float wait_time;
+    private float time = 0;
     [Space]
     public List<GameObject> links;
     public Vector3 start_pos;
@@ -50,6 +52,11 @@ public abstract class WiringSys : MonoBehaviour
         Update_pos();
         if (activated)
         {
+            time += Time.deltaTime;
+            if (time < wait_time)
+                return;
+            else
+                time = 0;
             gameObject.GetComponent<SpriteRenderer>().color = activated_color;
             if (sprite_on)
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_on;
@@ -62,7 +69,7 @@ public abstract class WiringSys : MonoBehaviour
                     wires.RemoveAt(i);
                     return;
                 }
-                links[i].GetComponent<WiringSys>().activated = true;
+                links[i].GetComponent<WiringSys>().activated = links[i].GetComponent<WiringSys>().signal_type;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", activated_wires_color);
             }
             if (signal_type)
@@ -70,6 +77,11 @@ public abstract class WiringSys : MonoBehaviour
         }
         else
         {
+            time += Time.deltaTime;
+            if (time < wait_time)
+                return;
+            else
+                time = 0;
             gameObject.GetComponent<SpriteRenderer>().color = deactivated_color;
             if (sprite_off)
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_off;
@@ -82,7 +94,7 @@ public abstract class WiringSys : MonoBehaviour
                     wires.RemoveAt(i);
                     return;
                 }
-                links[i].GetComponent<WiringSys>().activated = false;
+                links[i].GetComponent<WiringSys>().activated = !links[i].GetComponent<WiringSys>().signal_type;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", deactivated_wires_color);
             }
             if (!signal_type)

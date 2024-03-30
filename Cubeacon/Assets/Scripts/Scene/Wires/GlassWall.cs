@@ -8,7 +8,6 @@ public class GlassWall : WiringSys
     {
         activated_color = new Color32(0, 150, 255, 150);
         deactivated_color = new Color32(150, 150, 150, 255);
-        gameObject.GetComponent<SpriteRenderer>().size = new Vector2(0.3f, 1.2f);
         base.Start();
     }
 
