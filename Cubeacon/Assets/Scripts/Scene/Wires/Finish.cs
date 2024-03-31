@@ -15,7 +15,8 @@ public class Finish : WiringSys
         Debug.Log("Win");
         Debug.Log(SaveLoadSystem.LoadLevelsCompleted());
 
-        SaveLoadSystem.LoadLevelSelectScreen();
+        LevelCompleteManager lcm = LevelCompleteManager.GetInstance();
+        lcm.EnterPauseMode();
     }
 
     protected override void Start()
