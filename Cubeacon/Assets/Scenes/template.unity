@@ -4862,7 +4862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e157eeec8b0fe458e5313d98d54249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal_type: 0
+  signal_type: 1
   activated: 0
   links: []
   start_pos: {x: 0, y: 0, z: 0}
@@ -4870,6 +4870,7 @@ MonoBehaviour:
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 837258760}
+  timer: 0
 --- !u!61 &828523736
 BoxCollider2D:
   m_ObjectHideFlags: 0

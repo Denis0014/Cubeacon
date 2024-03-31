@@ -2073,14 +2073,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e157eeec8b0fe458e5313d98d54249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal_type: 0
+  signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 673744072}
+  timer: 0
 --- !u!1 &233901127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,6 +3614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links:
   - {fileID: 972438623}
   - {fileID: 222881331}
@@ -4767,6 +4770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links:
   - {fileID: 950167062}
   - {fileID: 1782163942}
@@ -7258,6 +7262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
@@ -7426,6 +7431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
@@ -9826,6 +9832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
@@ -13358,14 +13365,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e157eeec8b0fe458e5313d98d54249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal_type: 0
+  signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 1417132377}
+  timer: 0
 --- !u!61 &1782163945
 BoxCollider2D:
   m_ObjectHideFlags: 0

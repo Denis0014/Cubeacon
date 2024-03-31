@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public abstract class WiringSys : MonoBehaviour
 {
     public bool signal_type;
     public bool activated;
-    public float wait_time;
-    private float time = 0;
     [Space]
+    public List<GameObject> parants;
     public List<GameObject> links;
     public Vector3 start_pos;
     public List<Vector3> end_poses;
@@ -23,6 +23,11 @@ public abstract class WiringSys : MonoBehaviour
     public Sprite sprite_off;
     public Sprite sprite_on;
 
+    private void Awake()
+    {
+        parants = new List<GameObject>();
+    }
+
     virtual protected void Start()
     {
         if (sprite_off && sprite_on)
@@ -31,10 +36,12 @@ public abstract class WiringSys : MonoBehaviour
             deactivated_color = new Color32(255, 255, 255, 255);
         }
         wires = new List<GameObject>(links.Count);
+
         for (int i = 0; i < links.Count; i++)
         {
-            GameObject w = new GameObject("wire");
-            w.transform.parent = this.gameObject.transform;
+            GameObject w = new("wire");
+            w.transform.parent = gameObject.transform;
+            links[i].GetComponent<WiringSys>().parants.Add(gameObject);
             LineRenderer l = w.AddComponent<LineRenderer>();
             l.startWidth = 0.1f;
             l.endWidth = 0.1f;
@@ -52,11 +59,6 @@ public abstract class WiringSys : MonoBehaviour
         Update_pos();
         if (activated)
         {
-            time += Time.deltaTime;
-            if (time < wait_time)
-                return;
-            else
-                time = 0;
             gameObject.GetComponent<SpriteRenderer>().color = activated_color;
             if (sprite_on)
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_on;
@@ -69,19 +71,14 @@ public abstract class WiringSys : MonoBehaviour
                     wires.RemoveAt(i);
                     return;
                 }
-                links[i].GetComponent<WiringSys>().activated = links[i].GetComponent<WiringSys>().signal_type;
+                var t = links[i].GetComponent<WiringSys>();
+                int count = t.parants.Count(x => x != null && x.GetComponent<WiringSys>().activated);
+                links[i].GetComponent<WiringSys>().activated = (count % 2 != 0) == t.signal_type;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", activated_wires_color);
             }
-            if (signal_type)
-                activated = false;
         }
         else
         {
-            time += Time.deltaTime;
-            if (time < wait_time)
-                return;
-            else
-                time = 0;
             gameObject.GetComponent<SpriteRenderer>().color = deactivated_color;
             if (sprite_off)
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_off;
@@ -94,12 +91,13 @@ public abstract class WiringSys : MonoBehaviour
                     wires.RemoveAt(i);
                     return;
                 }
-                links[i].GetComponent<WiringSys>().activated = !links[i].GetComponent<WiringSys>().signal_type;
+                var t = links[i].GetComponent<WiringSys>();
+                int count = t.parants.Count(x => x != null && x.GetComponent<WiringSys>().activated);
+                links[i].GetComponent<WiringSys>().activated = (count % 2 == 0) != t.signal_type;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", deactivated_wires_color);
             }
-            if (!signal_type)
-                activated = true;
         }
+        activated = (parants.Count(x => x != null && x.GetComponent<WiringSys>().activated) % 2 != 0) == signal_type;
     }
 
     virtual protected void Update_pos()

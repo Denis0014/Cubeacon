@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RayRenderer : MonoBehaviour
@@ -55,15 +56,24 @@ public class RayRenderer : MonoBehaviour
         {
             DrawRayToObstacle(hit);
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Mirror"))
+            var obj = hit.collider.gameObject;
+            
+            if (obj == null) 
             {
-                Reflective reflect = hit.collider.gameObject.GetComponent<Reflective>();
+                return;
+            }
+
+            if (obj.layer == LayerMask.NameToLayer("Mirror"))
+            {
+                Reflective reflect = obj.GetComponent<Reflective>();
                 reflect.ReflectRay(this);
             }
 
-            else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Switch"))
+            else if (obj.layer == LayerMask.NameToLayer("Switch"))
             {
-                hit.collider.gameObject.GetComponent<WiringSys>().activated = hit.collider.gameObject.GetComponent<WiringSys>().signal_type;
+                var hasntRay = obj.GetComponent<Switch>().parants.FindLast(x => x.GetComponent<RaySignal>() != null);
+                if (hasntRay)
+                    hasntRay.GetComponent<RaySignal>().activated = true;
             }
         }
 
