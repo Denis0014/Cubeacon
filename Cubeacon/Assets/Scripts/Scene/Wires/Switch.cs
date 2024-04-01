@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Switch : WiringSys
@@ -11,7 +12,7 @@ public class Switch : WiringSys
 
     override protected void Start()
     {
-        timer = 0.1f;
+        timer = 0.5f;
         activated_color = new Color32(255, 255, 0, 255);
         deactivated_color = new Color32(255, 255, 255, 255);
         ray = new("raySignal");
@@ -32,7 +33,7 @@ public class Switch : WiringSys
             if (timer <= 0)
             {
                 ray.GetComponent<RaySignal>().activated = false;
-                timer = 0.1f;
+                timer = 0.5f;
             }
         }
     }
