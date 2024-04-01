@@ -5,18 +5,14 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Ink.Runtime;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager : InGameMenuManager
 {
     [SerializeField] public GameObject PauseMenu;
-    private bool PauseIsActive;
 
     [SerializeField] public GameObject HelpMenu;
     private bool HelpIsPlaying;
 
     [SerializeField] public GameObject SettingsMenu;
-
-    [SerializeField] public GameObject Player;
-    movePlayer MPScript;
 
     [SerializeField] public GameObject HintButton;
     private int HintCounter;
@@ -42,27 +38,23 @@ public class PauseManager : MonoBehaviour
         return instance;
     }
 
-    private void Start()
+    private new void Start()
     {
-        PauseIsActive = false;
-        PauseMenu.SetActive(false);
+        base.Start();
+        
         SettingsMenu.SetActive(false); 
         HelpMenu.SetActive(false);
 
         HintCounter = 0;
-       
-        Player = GameObject.Find("Player");
     }
 
     private void Update()
     {
-        MPScript = Player.GetComponent<movePlayer>();
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!PauseIsActive)
             {
-                EnterPauseMode();
+                OpenMenu();
             }
             else
             {
@@ -78,7 +70,7 @@ public class PauseManager : MonoBehaviour
                 }
                 else
                 {
-                    ExitPauseMode();
+                    CloseMenu();
                 }
             }
         }
@@ -100,7 +92,7 @@ public class PauseManager : MonoBehaviour
 
     public void ReturnPressed()
     {
-        ExitPauseMode();
+        CloseMenu();
     }
 
     public void ButtonHelpPressed()
@@ -112,26 +104,10 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-        public void ButtonHintPressed()
+    public void ButtonHintPressed()
     {
         ContinueHint();
         HintCounter += 1;
-    }
-
-    private void EnterPauseMode()
-    {
-        PauseIsActive = true;
-        PauseMenu.SetActive(true);
-        Time.timeScale = 0.0f;
-        MPScript.PauseMenu = true;
-    }
-
-    private void ExitPauseMode()
-    {   
-        PauseIsActive = false;
-        PauseMenu.SetActive(false);
-        Time.timeScale = 1.0f;
-        MPScript.PauseMenu = false;
     }
 
     private void ContinueHint()

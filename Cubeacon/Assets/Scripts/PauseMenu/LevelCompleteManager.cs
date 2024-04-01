@@ -5,14 +5,8 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Ink.Runtime;
 
-public class LevelCompleteManager : MonoBehaviour
+public class LevelCompleteManager : InGameMenuManager
 {
-    [SerializeField] public GameObject LevelCompleteMenu;
-
-    [SerializeField] TextAsset inkJSON;
-
-    [SerializeField] TextMeshProUGUI HelpText;
-
     private static LevelCompleteManager instance;
 
     private void Awake()
@@ -29,14 +23,9 @@ public class LevelCompleteManager : MonoBehaviour
         return instance;
     }
 
-    private void Start()
-    {
-        LevelCompleteMenu.SetActive(false);
-    }
-
     public void EnterPauseMode()
     {
-        LevelCompleteMenu.SetActive(true);
+        Menu.SetActive(true);
         Time.timeScale = 0.0f;
     }
 
