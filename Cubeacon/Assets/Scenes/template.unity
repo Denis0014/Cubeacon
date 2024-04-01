@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
@@ -2342,6 +2343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links:
   - {fileID: 11279322}
   - {fileID: 828523733}
@@ -2351,6 +2353,7 @@ MonoBehaviour:
   - {x: 0, y: 0.4, z: 0}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
+  timer: 0
 --- !u!61 &396982174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4864,6 +4867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
@@ -8503,7 +8507,7 @@ Transform:
   m_GameObject: {fileID: 1360924063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.5, y: 2.5, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 43538686}
@@ -8749,11 +8753,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
   sprite_off: {fileID: 21300000, guid: 38142377e2507474a84aa40b9b2c9453, type: 3}
   sprite_on: {fileID: 21300000, guid: 07e704d636e3adc4e9082aa71618cdb9, type: 3}
+  timer: 0
 --- !u!1 &1405594909
 GameObject:
   m_ObjectHideFlags: 0
@@ -11851,11 +11857,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal_type: 1
   activated: 0
+  parants: []
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
   sprite_off: {fileID: 21300000, guid: 356f8854737d383469d32047180ca805, type: 3}
   sprite_on: {fileID: 21300000, guid: 1fe9f4ad2f6c6f049a9f4a335856936e, type: 3}
+  timer1: 0
+  timer2: 0
 --- !u!61 &1888361811
 BoxCollider2D:
   m_ObjectHideFlags: 0
