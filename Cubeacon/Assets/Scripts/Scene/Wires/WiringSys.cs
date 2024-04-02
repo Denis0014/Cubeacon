@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public abstract class WiringSys : MonoBehaviour
@@ -7,6 +10,7 @@ public abstract class WiringSys : MonoBehaviour
     public bool signal_type;
     public bool activated;
     [Space]
+    public List<GameObject> parants;
     public List<GameObject> links;
     public Vector3 start_pos;
     public List<Vector3> end_poses;
@@ -19,6 +23,11 @@ public abstract class WiringSys : MonoBehaviour
     public Sprite sprite_off;
     public Sprite sprite_on;
 
+    private void Awake()
+    {
+        parants = new List<GameObject>();
+    }
+
     virtual protected void Start()
     {
         if (sprite_off && sprite_on)
@@ -27,10 +36,12 @@ public abstract class WiringSys : MonoBehaviour
             deactivated_color = new Color32(255, 255, 255, 255);
         }
         wires = new List<GameObject>(links.Count);
+
         for (int i = 0; i < links.Count; i++)
         {
-            GameObject w = new GameObject("wire");
-            w.transform.parent = this.gameObject.transform;
+            GameObject w = new("wire");
+            w.transform.parent = gameObject.transform;
+            links[i].GetComponent<WiringSys>().parants.Add(gameObject);
             LineRenderer l = w.AddComponent<LineRenderer>();
             l.startWidth = 0.1f;
             l.endWidth = 0.1f;
@@ -38,7 +49,7 @@ public abstract class WiringSys : MonoBehaviour
             l.endColor = Color.white;
             l.textureMode = LineTextureMode.Tile;
             //Debug.Log(links[i].transform.position);
-            l.SetPositions(new Vector3[2] { transform.position + start_pos, links[i].transform.position + end_poses[i] });
+            l.SetPositions(new Vector3[2] { transform.position + start_pos, links[i].transform.position + end_poses.ElementAtOrDefault(i) });
             wires.Add(w);
         }
     }
@@ -53,11 +64,18 @@ public abstract class WiringSys : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_on;
             for (int i = 0; i < links.Count; i++)
             {
-                links[i].GetComponent<WiringSys>().activated = true;
+                if (links[i].IsDestroyed())
+                {
+                    Destroy(wires[i]);
+                    links.RemoveAt(i);
+                    wires.RemoveAt(i);
+                    return;
+                }
+                var t = links[i].GetComponent<WiringSys>();
+                int count = t.parants.Count(x => x != null && x.GetComponent<WiringSys>().activated);
+                links[i].GetComponent<WiringSys>().activated = (count % 2 != 0) == t.signal_type;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", activated_wires_color);
             }
-            if (signal_type)
-                activated = false;
         }
         else
         {
@@ -66,17 +84,25 @@ public abstract class WiringSys : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_off;
             for (int i = 0; i < links.Count; i++)
             {
-                links[i].GetComponent<WiringSys>().activated = false;
+                if (links[i].IsDestroyed())
+                {
+                    Destroy(wires[i]);
+                    links.RemoveAt(i);
+                    wires.RemoveAt(i);
+                    return;
+                }
+                var t = links[i].GetComponent<WiringSys>();
+                int count = t.parants.Count(x => x != null && x.GetComponent<WiringSys>().activated);
+                links[i].GetComponent<WiringSys>().activated = (count % 2 == 0) != t.signal_type;
                 wires[i].GetComponent<LineRenderer>().material.SetColor("_EmissionColor", deactivated_wires_color);
             }
-            if (!signal_type)
-                activated = true;
         }
+        activated = (parants.Count(x => x != null && x.GetComponent<WiringSys>().activated) % 2 != 0) == signal_type;
     }
 
     virtual protected void Update_pos()
     {
-        for (int i = 0; i < links.Count; i++)
+        for (int i = 0; i < end_poses.Count; i++)
         {
             wires[i].GetComponent<LineRenderer>().SetPositions(new Vector3[2] { transform.position + start_pos, links[i].transform.position + end_poses[i] });
         }
