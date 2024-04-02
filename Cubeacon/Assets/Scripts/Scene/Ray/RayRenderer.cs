@@ -10,7 +10,7 @@ public class RayRenderer : MonoBehaviour
     private float ySpeed;
     private LineRenderer l;
 
-    void Start()
+    void Awake()
     {
         l = gameObject.AddComponent<LineRenderer>();
         var DefaultMaterial = new Material(Shader.Find("Unlit/Texture"));

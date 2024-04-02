@@ -26,6 +26,7 @@ public abstract class WiringSys : MonoBehaviour
     private void Awake()
     {
         parants = new List<GameObject>();
+        activated = false;
     }
 
     virtual protected void Start()

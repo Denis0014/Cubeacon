@@ -10,6 +10,7 @@ public class movePlayer : InteractiveObject
 
     void Start()
     {
+        Time.timeScale = 1f;
         sr = GetComponent<SpriteRenderer>();
     }
 
