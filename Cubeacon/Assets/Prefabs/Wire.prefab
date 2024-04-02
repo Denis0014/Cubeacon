@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -4032387597272195392}
   - component: {fileID: 4340385812115673922}
   m_Layer: 0
-  m_Name: Ray
+  m_Name: Wire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

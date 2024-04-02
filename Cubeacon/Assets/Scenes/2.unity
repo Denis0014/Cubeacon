@@ -603,6 +603,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 38142377e2507474a84aa40b9b2c9453, type: 3}
   sprite_on: {fileID: 21300000, guid: 07e704d636e3adc4e9082aa71618cdb9, type: 3}
   timer: 0
@@ -1634,7 +1635,7 @@ GameObject:
   - component: {fileID: 1093208073}
   m_Layer: 11
   m_Name: Beacon
-  m_TagString: Untagged
+  m_TagString: Blocks movement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2250,6 +2251,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
 --- !u!61 &1332753530
@@ -2587,6 +2589,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 0}
   end_poses:
   - {x: 0, y: 0.4, z: 0}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0

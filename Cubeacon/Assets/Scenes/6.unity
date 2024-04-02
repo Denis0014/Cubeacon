@@ -640,6 +640,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 0}
   end_poses:
   - {x: 0, y: 0.4, z: 0}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -1912,6 +1913,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
 --- !u!61 &290913208
@@ -3377,6 +3379,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 0}
   end_poses:
   - {x: 0, y: 0.4, z: 0}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -6881,6 +6884,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 0}
   end_poses:
   - {x: 0, y: 0.4, z: 0}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -7208,6 +7212,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 38142377e2507474a84aa40b9b2c9453, type: 3}
   sprite_on: {fileID: 21300000, guid: 07e704d636e3adc4e9082aa71618cdb9, type: 3}
   timer: 0
@@ -10671,6 +10676,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
 --- !u!61 &1586893880
@@ -10991,13 +10997,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102c1e74ae15dbc4a99fa267c274125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 1469128201}
-  Player: {fileID: 1117178459}
+  Menu: {fileID: 0}
+  Player: {fileID: 0}
   PauseMenu: {fileID: 1469128201}
   HelpMenu: {fileID: 537143164}
   SettingsMenu: {fileID: 1278827460}
   HintButton: {fileID: 164737787}
-  inkJSON: {fileID: 4900000, guid: c7bf9e2d98053ba428ca0bdb9a25f517, type: 3}
+  inkJSON: {fileID: 4900000, guid: 049eb53101c79ff4ab323234dfca31f6, type: 3}
   HelpText: {fileID: 933629984}
 --- !u!114 &1609277194
 MonoBehaviour:
@@ -14107,6 +14113,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
 --- !u!61 &2082682419

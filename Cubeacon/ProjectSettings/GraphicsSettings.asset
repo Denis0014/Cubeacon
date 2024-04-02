@@ -3,30 +3,30 @@
 --- !u!30 &1
 GraphicsSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 13
+  serializedVersion: 14
   m_Deferred:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 69, guid: 0000000000000000f000000000000000, type: 0}
   m_DeferredReflections:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 74, guid: 0000000000000000f000000000000000, type: 0}
   m_ScreenSpaceShadows:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 64, guid: 0000000000000000f000000000000000, type: 0}
   m_LegacyDeferred:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 63, guid: 0000000000000000f000000000000000, type: 0}
   m_DepthNormals:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 62, guid: 0000000000000000f000000000000000, type: 0}
   m_MotionVectors:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 75, guid: 0000000000000000f000000000000000, type: 0}
   m_LightHalo:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 105, guid: 0000000000000000f000000000000000, type: 0}
   m_LensFlare:
-    m_Mode: 1
+    m_Mode: 2
     m_Shader: {fileID: 102, guid: 0000000000000000f000000000000000, type: 0}
   m_VideoShadersIncludeMode: 2
   m_AlwaysIncludedShaders:
@@ -38,6 +38,7 @@ GraphicsSettings:
   - {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10783, guid: 0000000000000000f000000000000000, type: 0}
   m_PreloadedShaders: []
+  m_PreloadShadersBatchTimeLimit: -1
   m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_CustomRenderPipeline: {fileID: 0}
   m_TransparencySortMode: 0
@@ -62,3 +63,4 @@ GraphicsSettings:
   m_LightsUseColorTemperature: 0
   m_DefaultRenderingLayerMask: 1
   m_LogWhenShaderIsCompiled: 0
+  m_SRPDefaultSettings: {}

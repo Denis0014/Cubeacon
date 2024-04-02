@@ -819,6 +819,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 38142377e2507474a84aa40b9b2c9453, type: 3}
   sprite_on: {fileID: 21300000, guid: 07e704d636e3adc4e9082aa71618cdb9, type: 3}
   timer: 0
@@ -2006,6 +2007,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -2176,6 +2178,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -3990,6 +3993,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 823104878}
@@ -4808,6 +4812,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 895328670}
@@ -6548,6 +6553,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 1897469773}
@@ -6821,6 +6827,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -8304,6 +8311,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 1103961402}
@@ -8481,6 +8489,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 356f8854737d383469d32047180ca805, type: 3}
   sprite_on: {fileID: 21300000, guid: 1fe9f4ad2f6c6f049a9f4a335856936e, type: 3}
   timer1: 0
@@ -11722,6 +11731,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 356f8854737d383469d32047180ca805, type: 3}
   sprite_on: {fileID: 21300000, guid: 1fe9f4ad2f6c6f049a9f4a335856936e, type: 3}
   timer1: 0
@@ -11893,6 +11903,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -12257,6 +12268,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 356f8854737d383469d32047180ca805, type: 3}
   sprite_on: {fileID: 21300000, guid: 1fe9f4ad2f6c6f049a9f4a335856936e, type: 3}
   timer1: 0
@@ -13228,6 +13240,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -13535,6 +13548,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -14022,6 +14036,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 356f8854737d383469d32047180ca805, type: 3}
   sprite_on: {fileID: 21300000, guid: 1fe9f4ad2f6c6f049a9f4a335856936e, type: 3}
   timer1: 0
@@ -14391,6 +14406,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 565263800}
@@ -17179,6 +17195,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -17349,6 +17366,7 @@ MonoBehaviour:
   start_pos: {x: 0, y: 0, z: 2}
   end_poses:
   - {x: 0, y: 0.4, z: 2}
+  wirePrefab: {fileID: 7799693208142956098, guid: f3987588c1464fd4d948a333cb17490e, type: 3}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0

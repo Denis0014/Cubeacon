@@ -12,9 +12,7 @@ public class RayRenderer : MonoBehaviour
 
     void Awake()
     {
-        l = gameObject.AddComponent<LineRenderer>();
-        var DefaultMaterial = new Material(Shader.Find("Unlit/Texture"));
-        l.material = DefaultMaterial;
+        l = gameObject.GetComponent<LineRenderer>();
         l.material.SetColor("_EmissionColor", new Color32(255, 255, 255, 255));
         l.startWidth = 0.1f;
         l.endWidth = 0.1f;
