@@ -1420,6 +1420,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1050094970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6636752004756696837, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+  m_PrefabInstance: {fileID: 6636752005480018433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102c1e74ae15dbc4a99fa267c274125c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1093208067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,6 +2696,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004756696831, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6636752004756696831, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2781,9 +2824,45 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1003965833}
+    - target: {fileID: 6636752004756696837, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 81406ca34892a694c8ed96e5b6433f1c, type: 3}
     - target: {fileID: 6636752005757634418, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1623199582}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1050094970}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: EnterHelpMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4900000, guid: 81406ca34892a694c8ed96e5b6433f1c, type: 3}
+    - target: {fileID: 6636752006201019721, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.TextAsset, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}

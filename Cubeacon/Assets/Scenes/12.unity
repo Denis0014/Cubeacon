@@ -4425,6 +4425,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636752004729689260, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6636752004756696831, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -4521,6 +4549,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1003965833}
+    - target: {fileID: 6636752004756696837, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: a5edfd1e485efef4eb8dbe744119b92c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
 --- !u!1 &1332551226

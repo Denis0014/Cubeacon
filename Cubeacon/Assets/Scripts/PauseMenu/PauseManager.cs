@@ -41,8 +41,8 @@ public class PauseManager : InGameMenuManager
     private new void Start()
     {
         base.Start();
-        
-        SettingsMenu.SetActive(false); 
+
+        SettingsMenu.SetActive(false);
         HelpMenu.SetActive(false);
 
         HintCounter = 0;
@@ -97,11 +97,9 @@ public class PauseManager : InGameMenuManager
 
     public void ButtonHelpPressed()
     {
-        if (HintCounter == 0)
-        {
-            PauseManager.GetInstance().EnterHelpMode(inkJSON);
-            HintCounter += 1;
-        }
+        HintButton.SetActive(true);
+        PauseManager.GetInstance().EnterHelpMode(inkJSON);
+        HintCounter = 1;
     }
 
     public void ButtonHintPressed()

@@ -10991,12 +10991,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102c1e74ae15dbc4a99fa267c274125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Menu: {fileID: 1469128201}
+  Player: {fileID: 1117178459}
   PauseMenu: {fileID: 1469128201}
   HelpMenu: {fileID: 537143164}
   SettingsMenu: {fileID: 1278827460}
-  Player: {fileID: 0}
   HintButton: {fileID: 164737787}
-  inkJSON: {fileID: 4900000, guid: 049eb53101c79ff4ab323234dfca31f6, type: 3}
+  inkJSON: {fileID: 4900000, guid: c7bf9e2d98053ba428ca0bdb9a25f517, type: 3}
   HelpText: {fileID: 933629984}
 --- !u!114 &1609277194
 MonoBehaviour:
