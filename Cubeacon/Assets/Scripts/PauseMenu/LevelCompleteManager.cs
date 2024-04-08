@@ -23,12 +23,6 @@ public class LevelCompleteManager : InGameMenuManager
         return instance;
     }
 
-    public void EnterPauseMode()
-    {
-        Menu.SetActive(true);
-        Time.timeScale = 0.0f;
-    }
-
     public void ExitPressed()
     {
         SceneManager.LoadScene("Levels");

@@ -18,7 +18,7 @@ public class Finish : Switch
         Debug.Log(SaveLoadSystem.LoadLevelsCompleted());
 
         LevelCompleteManager lcm = LevelCompleteManager.GetInstance();
-        lcm.EnterPauseMode();
+        lcm.OpenMenu();
     }
 
     protected override void Start()

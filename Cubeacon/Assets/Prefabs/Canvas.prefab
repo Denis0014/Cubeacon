@@ -937,10 +937,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 6636752004762195605}
   Player: {fileID: 0}
-  PauseMenu: {fileID: 6636752004762195605}
+  MenuPanel: {fileID: 6636752005522041968}
   HelpMenu: {fileID: 6636752005202453099}
   SettingsMenu: {fileID: 6636752006403056113}
   HintButton: {fileID: 6636752005160132734}
+  ApproveMenu: {fileID: 6636752006187658222}
   inkJSON: {fileID: 4900000, guid: 049eb53101c79ff4ab323234dfca31f6, type: 3}
   HelpText: {fileID: 6636752004729689260}
 --- !u!114 &6636752004756696836

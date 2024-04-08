@@ -7,7 +7,7 @@ using Ink.Runtime;
 
 public class PauseManager : InGameMenuManager
 {
-    [SerializeField] public GameObject PauseMenu;
+    [SerializeField] public GameObject MenuPanel;
 
     [SerializeField] public GameObject HelpMenu;
     private bool HelpIsPlaying;
@@ -17,6 +17,8 @@ public class PauseManager : InGameMenuManager
     [SerializeField] public GameObject HintButton;
     private int HintCounter;
     private Story CurrentHint;
+
+    [SerializeField] public GameObject ApproveMenu;
 
     [SerializeField] TextAsset inkJSON;
 
@@ -52,26 +54,28 @@ public class PauseManager : InGameMenuManager
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!PauseIsActive)
-            {
-                OpenMenu();
-            }
-            else
+            if (PauseIsActive && Menu.activeSelf)
             {
                 if (HelpMenu.activeSelf)
                 {
-                    HelpMenu.SetActive(false);
-                    PauseMenu.SetActive(true);
+                    CloseSubMenu(HelpMenu);
                 }
                 else if (SettingsMenu.activeSelf)
                 {
-                    SettingsMenu.SetActive(false);
-                    PauseMenu.SetActive(true);
+                    CloseSubMenu(SettingsMenu);
+                }
+                else if (ApproveMenu.activeSelf)
+                {
+                    CloseSubMenu(ApproveMenu);
                 }
                 else
                 {
                     CloseMenu();
                 }
+            }
+            else if (!PauseIsActive)
+            {
+                OpenMenu();
             }
         }
 
@@ -90,6 +94,12 @@ public class PauseManager : InGameMenuManager
         }
     }
 
+    private void CloseSubMenu(GameObject subMenu)
+    {
+        subMenu.SetActive(false);
+        MenuPanel.SetActive(true);
+    }
+
     public void ReturnPressed()
     {
         CloseMenu();
@@ -98,7 +108,7 @@ public class PauseManager : InGameMenuManager
     public void ButtonHelpPressed()
     {
         HintButton.SetActive(true);
-        PauseManager.GetInstance().EnterHelpMode(inkJSON);
+        EnterHelpMode(inkJSON);
         HintCounter = 1;
     }
 

@@ -12,7 +12,7 @@ public class InGameMenuManager : MonoBehaviour
     [SerializeField] public GameObject Player;
     movePlayer MPScript;
 
-    protected bool PauseIsActive;
+    protected static bool PauseIsActive;
 
     protected void Start()
     {
