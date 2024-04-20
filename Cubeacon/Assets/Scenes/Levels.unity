@@ -345,7 +345,6 @@ GameObject:
   - component: {fileID: 90367634}
   - component: {fileID: 90367638}
   - component: {fileID: 90367637}
-  - component: {fileID: 90367636}
   - component: {fileID: 90367635}
   m_Layer: 5
   m_Name: 12
@@ -419,31 +418,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90367636}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 12
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &90367636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90367633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 12
 --- !u!114 &90367637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,7 +668,6 @@ GameObject:
   - component: {fileID: 204437003}
   - component: {fileID: 204437007}
   - component: {fileID: 204437006}
-  - component: {fileID: 204437005}
   - component: {fileID: 204437004}
   m_Layer: 5
   m_Name: 5
@@ -756,31 +741,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 204437005}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 5
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &204437005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204437002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 5
 --- !u!114 &204437006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,7 +2324,6 @@ GameObject:
   m_Component:
   - component: {fileID: 829084103}
   - component: {fileID: 829084105}
-  - component: {fileID: 829084106}
   - component: {fileID: 829084104}
   - component: {fileID: 829084107}
   m_Layer: 5
@@ -2421,19 +2392,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829084102}
   m_CullTransparentMesh: 1
---- !u!114 &829084106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829084102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 7
 --- !u!114 &829084107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2478,16 +2436,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 829084106}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 7
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &838175255
@@ -2501,7 +2459,6 @@ GameObject:
   - component: {fileID: 838175256}
   - component: {fileID: 838175258}
   - component: {fileID: 838175257}
-  - component: {fileID: 838175259}
   - component: {fileID: 838175260}
   m_Layer: 5
   m_Name: 3
@@ -2569,19 +2526,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838175255}
   m_CullTransparentMesh: 1
---- !u!114 &838175259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838175255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 3
 --- !u!114 &838175260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2626,16 +2570,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838175259}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &867977375
@@ -3462,7 +3406,6 @@ GameObject:
   - component: {fileID: 1056114935}
   - component: {fileID: 1056114937}
   - component: {fileID: 1056114936}
-  - component: {fileID: 1056114939}
   - component: {fileID: 1056114938}
   m_Layer: 5
   m_Name: 1
@@ -3574,31 +3517,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1056114939}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1056114939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056114934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 1
 --- !u!1 &1063780441
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,7 +3540,6 @@ GameObject:
   - component: {fileID: 1063780442}
   - component: {fileID: 1063780446}
   - component: {fileID: 1063780445}
-  - component: {fileID: 1063780444}
   - component: {fileID: 1063780443}
   m_Layer: 5
   m_Name: 8
@@ -3684,31 +3613,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1063780444}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 8
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1063780444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063780441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 8
 --- !u!114 &1063780445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4843,7 +4759,6 @@ GameObject:
   - component: {fileID: 1468923279}
   - component: {fileID: 1468923283}
   - component: {fileID: 1468923282}
-  - component: {fileID: 1468923281}
   - component: {fileID: 1468923280}
   m_Layer: 5
   m_Name: 4
@@ -4917,31 +4832,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468923281}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 4
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1468923281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468923278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 4
 --- !u!114 &1468923282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5095,7 +4997,6 @@ GameObject:
   - component: {fileID: 1513749883}
   - component: {fileID: 1513749887}
   - component: {fileID: 1513749886}
-  - component: {fileID: 1513749885}
   - component: {fileID: 1513749884}
   m_Layer: 5
   m_Name: 10
@@ -5169,31 +5070,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1513749885}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 10
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1513749885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513749882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 10
 --- !u!114 &1513749886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5245,8 +5133,9 @@ GameObject:
   - component: {fileID: 1533965025}
   - component: {fileID: 1533965024}
   - component: {fileID: 1533965023}
+  - component: {fileID: 1533965028}
   m_Layer: 5
-  m_Name: Cavans
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5344,6 +5233,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1533965028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533965022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02446676a163a2045b02a96fb2ac77a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1559027837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5937,7 +5838,6 @@ GameObject:
   - component: {fileID: 1623704558}
   - component: {fileID: 1623704560}
   - component: {fileID: 1623704559}
-  - component: {fileID: 1623704561}
   - component: {fileID: 1623704562}
   m_Layer: 5
   m_Name: 2
@@ -6005,19 +5905,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623704557}
   m_CullTransparentMesh: 1
---- !u!114 &1623704561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623704557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 2
 --- !u!114 &1623704562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6062,16 +5949,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1623704561}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1690337147
@@ -6220,7 +6107,6 @@ GameObject:
   - component: {fileID: 1704888477}
   - component: {fileID: 1704888481}
   - component: {fileID: 1704888480}
-  - component: {fileID: 1704888479}
   - component: {fileID: 1704888478}
   m_Layer: 5
   m_Name: 9
@@ -6294,31 +6180,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1704888479}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 9
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1704888479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704888476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 9
 --- !u!114 &1704888480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6898,7 +6771,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1948161324}
   - component: {fileID: 1948161326}
-  - component: {fileID: 1948161327}
   - component: {fileID: 1948161325}
   - component: {fileID: 1948161328}
   m_Layer: 5
@@ -6967,19 +6839,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948161323}
   m_CullTransparentMesh: 1
---- !u!114 &1948161327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948161323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 11
 --- !u!114 &1948161328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7024,16 +6883,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1948161327}
-        m_TargetAssemblyTypeName: LevelsControl, Assembly-CSharp
+      - m_Target: {fileID: 1533965028}
+        m_TargetAssemblyTypeName: LevelSelectManager, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430\u0436\u0430\u043B"
+          m_StringArgument: 11
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1958864541
@@ -7611,7 +7470,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2077078996}
   - component: {fileID: 2077078998}
-  - component: {fileID: 2077078999}
   - component: {fileID: 2077078997}
   - component: {fileID: 2077079000}
   m_Layer: 5
@@ -7680,19 +7538,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077078995}
   m_CullTransparentMesh: 1
---- !u!114 &2077078999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077078995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbbb724b5b542143a24be58df127eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneNumber: 6
 --- !u!114 &2077079000
 MonoBehaviour:
   m_ObjectHideFlags: 0
