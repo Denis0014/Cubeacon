@@ -19,4 +19,9 @@ public class LevelSelectManager : MonoBehaviour
             SceneManager.LoadScene("Menu");
         }
     }
+
+    public void OpenScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }
