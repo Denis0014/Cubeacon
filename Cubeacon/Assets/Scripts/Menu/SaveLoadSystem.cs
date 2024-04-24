@@ -11,12 +11,9 @@ public static class SaveLoadSystem
 
     public static void SaveThisLevel()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(levelsCompletedPath);
-
-        int levelsCompleted = SceneManager.GetActiveScene().buildIndex;
-        bf.Serialize(file, levelsCompleted);
-        file.Close();
+        int levelNumber = GetLevelNumber();
+        if (LevelShouldBeSaved(levelNumber))
+            Save(levelNumber);
     }
 
     public static int LoadLevelsCompleted()
@@ -25,9 +22,33 @@ public static class SaveLoadSystem
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.OpenRead(levelsCompletedPath);
-            return (int)bf.Deserialize(file);
-        }
 
+            int res = (int)bf.Deserialize(file);
+            file.Close();
+
+            return res;
+        }
         return 0;
+    }
+
+    private static int GetLevelNumber()
+    {
+        string levelName = SceneManager.GetActiveScene().name;
+        return int.Parse(levelName);
+    }
+
+    private static bool LevelShouldBeSaved(int levelNumber)
+    {
+        int completedLevels = LoadLevelsCompleted();
+        return levelNumber > completedLevels;
+    }
+
+    private static void Save(int levelNumber)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(levelsCompletedPath);
+        
+        bf.Serialize(file, levelNumber);
+        file.Close();
     }
 }
