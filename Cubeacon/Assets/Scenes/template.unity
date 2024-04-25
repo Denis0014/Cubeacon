@@ -176,6 +176,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
 --- !u!61 &11279325
@@ -2344,13 +2345,11 @@ MonoBehaviour:
   signal_type: 1
   activated: 0
   parants: []
-  links:
-  - {fileID: 11279322}
-  - {fileID: 828523733}
-  - {fileID: 1888361808}
+  links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses:
   - {x: 0, y: 0.4, z: 0}
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 180bcedddf582724c85e9385e2035719, type: 3}
   sprite_on: {fileID: 21300000, guid: fea34606208361b4ab13c8711ec3efa2, type: 3}
   timer: 0
@@ -4871,6 +4870,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 0}
   sprite_on: {fileID: 0}
   animator: {fileID: 837258760}
@@ -5527,6 +5527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 884611891}
   - component: {fileID: 884611892}
+  - component: {fileID: 884611893}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -5559,6 +5560,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34baef227ab1c28469f4f14f7024890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &884611893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884611890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e46885323f11dc419423a75720ef7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &900064747
@@ -6338,11 +6351,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102c1e74ae15dbc4a99fa267c274125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 1053369492}
+  Menu: {fileID: 0}
+  Player: {fileID: 1003965833}
+  MenuPanel: {fileID: 0}
   HelpMenu: {fileID: 277565546}
   SettingsMenu: {fileID: 1492947952}
-  Player: {fileID: 1003965833}
   HintButton: {fileID: 353440383}
+  ApproveMenu: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 049eb53101c79ff4ab323234dfca31f6, type: 3}
   HelpText: {fileID: 1018767021}
 --- !u!1 &1052120412
@@ -8757,9 +8772,11 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 38142377e2507474a84aa40b9b2c9453, type: 3}
   sprite_on: {fileID: 21300000, guid: 07e704d636e3adc4e9082aa71618cdb9, type: 3}
   timer: 0
+  timer1: 0
 --- !u!1 &1405594909
 GameObject:
   m_ObjectHideFlags: 0
@@ -11861,6 +11878,7 @@ MonoBehaviour:
   links: []
   start_pos: {x: 0, y: 0, z: 0}
   end_poses: []
+  wirePrefab: {fileID: 0}
   sprite_off: {fileID: 21300000, guid: 356f8854737d383469d32047180ca805, type: 3}
   sprite_on: {fileID: 21300000, guid: 1fe9f4ad2f6c6f049a9f4a335856936e, type: 3}
   timer1: 0
