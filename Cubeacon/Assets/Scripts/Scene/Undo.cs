@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class Undo : MonoBehaviour
@@ -40,7 +42,17 @@ public class Undo : MonoBehaviour
             {
                 var objects = history.Pop();
                 foreach (var obj in objects.Keys)
-                    obj.transform.position = objects[obj];
+                {
+                    if (obj.activeSelf)
+                    {
+                        obj.transform.position = objects[obj];
+                    }
+                    else
+                    {
+                        obj.SetActive(true);
+                        obj.GetComponentInChildren<Animator>().SetTrigger("back");
+                    }
+                }
             }
         }
     }
