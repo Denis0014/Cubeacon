@@ -7,6 +7,7 @@ public class InteractiveObject : MonoBehaviour
     private Collider2D col;
     private Rigidbody2D rb;
     private int interactiveLayers;
+    public bool noclip;
 
     void Awake()
     {
@@ -17,7 +18,8 @@ public class InteractiveObject : MonoBehaviour
 
     protected bool tryToMove(Vector2 direction)
     {
-        if (isBlockedByWall(direction))
+        
+        if (!noclip && isBlockedByWall(direction))
             return false;
 
         InteractiveObject objectInFront = InteractiveObjectOnTheWay(direction);
