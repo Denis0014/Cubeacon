@@ -26,7 +26,7 @@ public class InteractiveObject : MonoBehaviour
         acts.Add(gameObject, transform.position);
 
         InteractiveObject objectInFront = InteractiveObjectOnTheWay(direction);
-        if (objectInFront == null || objectInFront.TryToMove(direction, acts, undo))
+        if  (objectInFront == null || objectInFront.TryToMove(direction, acts, undo))
         {
             rb.MovePosition(rb.position + direction);
             var temp = new Dictionary<GameObject, Vector3>(acts);
