@@ -53,6 +53,22 @@ public abstract class WiringSys : MonoBehaviour
     virtual protected void Update()
     {
         Update_pos();
+        bool exit = false;
+        for (var i = 0; i < links.Count; i++)
+        {
+            if (!links[i].activeSelf)
+            {
+                wires[i].SetActive(false);
+                links[i].SetActive(false);
+                exit = true;
+            }
+            else
+            {
+                wires[i].SetActive(true);
+            }
+        }
+        if (exit)
+            return;
         if (activated)
         {
             gameObject.GetComponent<SpriteRenderer>().color = activated_color;
@@ -60,13 +76,6 @@ public abstract class WiringSys : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_on;
             for (int i = 0; i < links.Count; i++)
             {
-                if (links[i].IsDestroyed())
-                {
-                    Destroy(wires[i]);
-                    links.RemoveAt(i);
-                    wires.RemoveAt(i);
-                    return;
-                }
                 var t = links[i].GetComponent<WiringSys>();
                 int count = t.parants.Count(x => x != null && x.GetComponent<WiringSys>().activated);
                 links[i].GetComponent<WiringSys>().activated = (count % 2 != 0) == t.signal_type;
@@ -81,13 +90,6 @@ public abstract class WiringSys : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprite_off;
             for (int i = 0; i < links.Count; i++)
             {
-                if (links[i].IsDestroyed())
-                {
-                    Destroy(wires[i]);
-                    links.RemoveAt(i);
-                    wires.RemoveAt(i);
-                    return;
-                }
                 var t = links[i].GetComponent<WiringSys>();
                 int count = t.parants.Count(x => x != null && x.GetComponent<WiringSys>().activated);
                 links[i].GetComponent<WiringSys>().activated = (count % 2 == 0) != t.signal_type;

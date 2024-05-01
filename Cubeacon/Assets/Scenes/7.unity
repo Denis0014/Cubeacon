@@ -458,8 +458,8 @@ Transform:
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1327977518}
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &83466821
 GameObject:
@@ -4871,6 +4871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245551568}
   - component: {fileID: 1245551569}
+  - component: {fileID: 1245551570}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -4903,6 +4904,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34baef227ab1c28469f4f14f7024890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1245551570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245551567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e46885323f11dc419423a75720ef7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1327977517
@@ -4971,6 +4984,7 @@ Transform:
   - {fileID: 1980769268}
   - {fileID: 1806723062}
   - {fileID: 247749617}
+  - {fileID: 63358104}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
