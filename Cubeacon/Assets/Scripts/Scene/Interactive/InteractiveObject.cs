@@ -11,6 +11,7 @@ public class InteractiveObject : MonoBehaviour
 {
     private Rigidbody2D rb;
     private int interactiveLayers;
+    public bool noclip;
 
     void Awake()
     {
@@ -20,7 +21,7 @@ public class InteractiveObject : MonoBehaviour
 
     protected bool TryToMove(Vector2 direction, Dictionary<GameObject, Vector3> acts, Undo undo)
     {
-        if (IsBlockedByWall(direction))
+        if (!noclip && isBlockedByWall(direction))
             return false;
 
         acts.Add(gameObject, transform.position);
