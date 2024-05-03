@@ -9,11 +9,13 @@ public class movePlayer : InteractiveObject
     public bool PauseMenu;
     private SpriteRenderer sr;
     private Undo undo;
+    private AudioSource audioSource;
 
     void Start()
     {
         Time.timeScale = 1f;
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         undo = Undo.Instance;
     }
 
@@ -23,27 +25,61 @@ public class movePlayer : InteractiveObject
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                if (TryToMove(new Vector2(0, 1), new Dictionary<GameObject, Vector3>(), undo))
-                    animator.SetTrigger("Up");
+                TryMoveUp();
             }
+
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (TryToMove(new Vector2(-1, 0), new Dictionary<GameObject, Vector3>(), undo))
-                    animator.SetTrigger("Go");
-                sr.flipX = true;
+                TryMoveLeft();
             }
+
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (TryToMove(new Vector2(0, -1), new Dictionary<GameObject, Vector3>(), undo))
-                    animator.SetTrigger("Down");
+                TryMoveDown();
             }
+
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (TryToMove(new Vector2(1, 0), new Dictionary<GameObject, Vector3>(), undo))
-                    animator.SetTrigger("Go");
-                sr.flipX = false;
+                TryMoveRight();
             }
         }
+    }
 
+    private void TryMoveUp()
+    {
+        if (TryToMove(new Vector2(0, 1), new Dictionary<GameObject, Vector3>(), undo))
+        {
+            animator.SetTrigger("Up");
+            audioSource.Play();
+        }
+    }
+
+    private void TryMoveLeft()
+    {
+        if (TryToMove(new Vector2(-1, 0), new Dictionary<GameObject, Vector3>(), undo))
+        {
+            animator.SetTrigger("Go");
+            audioSource.Play();
+        }
+        sr.flipX = true;
+    }
+
+    private void TryMoveDown()
+    {
+        if (TryToMove(new Vector2(0, -1), new Dictionary<GameObject, Vector3>(), undo))
+        {
+            animator.SetTrigger("Down");
+            audioSource.Play();
+        }
+    }
+
+    private void TryMoveRight()
+    {
+        if (TryToMove(new Vector2(1, 0), new Dictionary<GameObject, Vector3>(), undo))
+        {
+            animator.SetTrigger("Go");
+            audioSource.Play();
+        }
+        sr.flipX = false;
     }
 }

@@ -11,6 +11,7 @@ public class FragileWall : WiringSys
     public float timer1;
     public float timer2;
     private Undo undo;
+    private AudioSource audioSource;
 
     protected override void Update_pos() { }
 
@@ -21,6 +22,7 @@ public class FragileWall : WiringSys
         timer1 = 1f;
         timer2 = 1f;
         undo = FindObjectOfType<Undo>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     override protected void Update()
@@ -34,16 +36,12 @@ public class FragileWall : WiringSys
             }
             if (timer1 == 1f)
             {
-                animator.StartRecording(5);
-                animator.SetTrigger("go");
+                StartExplosion();
             }
             timer1 -= Time.deltaTime;
             if (timer1 <= 0)
             {
-                undo.history.Peek().Add(gameObject, transform.position);
-                gameObject.SetActive(false);
-                timer2 = 1f;
-                timer1 = 1;
+                FinishExposion();
             }
         }
         else
@@ -51,5 +49,20 @@ public class FragileWall : WiringSys
             timer2 = 1f;
             timer1 = 1;
         }
+    }
+
+    private void StartExplosion()
+    {
+        animator.StartRecording(5);
+        animator.SetTrigger("go");
+        audioSource.Play();
+    }
+
+    private void FinishExposion()
+    {
+        undo.history.Peek().Add(gameObject, transform.position);
+        gameObject.SetActive(false);
+        timer2 = 1f;
+        timer1 = 1;
     }
 }
