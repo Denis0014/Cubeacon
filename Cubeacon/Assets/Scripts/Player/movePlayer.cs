@@ -9,13 +9,11 @@ public class movePlayer : InteractiveObject
     public bool PauseMenu;
     private SpriteRenderer sr;
     private Undo undo;
-    private AudioSource audioSource;
 
     void Start()
     {
         Time.timeScale = 1f;
         sr = GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
         undo = Undo.Instance;
     }
 
@@ -50,7 +48,6 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(0, 1), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Up");
-            audioSource.Play();
         }
     }
 
@@ -59,7 +56,6 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(-1, 0), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Go");
-            audioSource.Play();
         }
         sr.flipX = true;
     }
@@ -69,7 +65,6 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(0, -1), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Down");
-            audioSource.Play();
         }
     }
 
@@ -78,7 +73,6 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(1, 0), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Go");
-            audioSource.Play();
         }
         sr.flipX = false;
     }

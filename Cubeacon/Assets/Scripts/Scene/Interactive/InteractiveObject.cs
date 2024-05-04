@@ -9,13 +9,17 @@ using static UnityEditor.PlayerSettings;
 
 public class InteractiveObject : MonoBehaviour
 {
+    public bool noclip;
     private Rigidbody2D rb;
     private int interactiveLayers;
-    public bool noclip;
+    private AudioSource audioSource;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = FindObjectOfType<AudioSource>();
         interactiveLayers = LayerMask.GetMask("Blocks light", "Mirror", "Passes light", "Switch");
     }
 
@@ -29,11 +33,7 @@ public class InteractiveObject : MonoBehaviour
         InteractiveObject objectInFront = InteractiveObjectOnTheWay(direction);
         if  (objectInFront == null || objectInFront.TryToMove(direction, acts, undo))
         {
-            rb.MovePosition(rb.position + direction);
-            var temp = new Dictionary<GameObject, Vector3>(acts);
-            if (temp.Count > 0)
-                undo.history.Push(temp);
-            acts.Clear();
+            Move(direction, acts, undo);
             return true;
         }
 
@@ -62,5 +62,16 @@ public class InteractiveObject : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void Move(Vector2 direction, Dictionary<GameObject, Vector3> acts, Undo undo)
+    {
+        rb.MovePosition(rb.position + direction);
+        var temp = new Dictionary<GameObject, Vector3>(acts);
+        if (temp.Count > 0)
+            undo.history.Push(temp);
+        acts.Clear();
+        if (audioSource != null)
+            audioSource.Play();
     }
 }
