@@ -17,10 +17,13 @@ public class InteractiveObject : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-            audioSource = FindObjectOfType<AudioSource>();
+        audioSource = GetAudioSource();
         interactiveLayers = LayerMask.GetMask("Blocks light", "Mirror", "Passes light", "Switch");
+    }
+
+    protected virtual AudioSource GetAudioSource()
+    {
+        return GetComponent<AudioSource>();
     }
 
     protected bool TryToMove(Vector2 direction, Dictionary<GameObject, Vector3> acts, Undo undo)
