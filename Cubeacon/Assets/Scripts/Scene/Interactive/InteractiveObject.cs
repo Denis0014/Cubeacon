@@ -1,38 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class InteractiveObject : MonoBehaviour
 {
-    private Collider2D col;
+    public bool noclip;
     private Rigidbody2D rb;
     private int interactiveLayers;
-    public bool noclip;
+    private AudioSource audioSource;
 
     void Awake()
     {
-        col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetAudioSource();
         interactiveLayers = LayerMask.GetMask("Blocks light", "Mirror", "Passes light", "Switch");
     }
 
-    protected bool tryToMove(Vector2 direction)
+    protected virtual AudioSource GetAudioSource()
     {
-        
-        if (!noclip && isBlockedByWall(direction))
+        return GetComponent<AudioSource>();
+    }
+
+    protected bool TryToMove(Vector2 direction, Dictionary<GameObject, Vector3> acts, Undo undo)
+    {
+        if (!noclip && IsBlockedByWall(direction))
             return false;
 
+        acts.Add(gameObject, transform.position);
+
         InteractiveObject objectInFront = InteractiveObjectOnTheWay(direction);
-        if (objectInFront == null || objectInFront.tryToMove(direction))
+        if  (objectInFront == null || objectInFront.TryToMove(direction, acts, undo))
         {
-            rb.MovePosition(rb.position + direction);
+            Move(direction, acts, undo);
             return true;
         }
 
         return false;
     }
 
-    private bool isBlockedByWall(Vector2 direction)
+    private bool IsBlockedByWall(Vector2 direction)
     {
         Vector2 rayStart = rb.position + new Vector2(0.5f, 0.5f) * direction;
         RaycastHit2D hit = Physics2D.Raycast(rayStart, direction, 1, interactiveLayers);
@@ -54,5 +65,16 @@ public class InteractiveObject : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void Move(Vector2 direction, Dictionary<GameObject, Vector3> acts, Undo undo)
+    {
+        rb.MovePosition(rb.position + direction);
+        var temp = new Dictionary<GameObject, Vector3>(acts);
+        if (temp.Count > 0)
+            undo.history.Push(temp);
+        acts.Clear();
+        if (audioSource != null)
+            audioSource.Play();
     }
 }

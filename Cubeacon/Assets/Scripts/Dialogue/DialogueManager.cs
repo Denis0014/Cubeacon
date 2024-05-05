@@ -42,17 +42,17 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void Update()
-    { 
-        if (!dialogueIsPlaying) 
-        { 
+    {
+        if (!dialogueIsPlaying)
+        {
             return;
-            
+
         }
-       if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             ContinueStory();
         }
-    
+
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         Time.timeScale = 0.0f;
         ContinueStory();
-        
+
     }
     private void ExitDialogueMode()
     {
@@ -82,5 +82,5 @@ public class DialogueManager : MonoBehaviour
             ExitDialogueMode();
         }
     }
-    
+
 }
