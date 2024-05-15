@@ -1,32 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
 
 public class FragileWall : WiringSys
 {
 
     public Animator animator;
-    public float timer;
+    public float timer1;
+    public float timer2;
+    private Undo undo;
+    private AudioSource audioSource;
+
+    protected override void Update_pos() { }
 
     override protected void Start()
     {
         activated_color = new Color32(255, 255, 0, 255);
         deactivated_color = new Color32(255, 255, 255, 255);
-        timer = 2;
+        timer1 = 1f;
+        timer2 = 1f;
+        undo = FindObjectOfType<Undo>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     override protected void Update()
     {
         if (activated)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            if (timer2 > 0)
             {
-                animator.SetBool("go", true);
-                Destroy(gameObject, 1);
+                timer2 -= Time.deltaTime;
+                return;
             }
-            activated = false;
+            if (timer1 == 1f)
+            {
+                StartExplosion();
+            }
+            timer1 -= Time.deltaTime;
+            if (timer1 <= 0)
+            {
+                FinishExposion();
+            }
         }
+        else
+        {
+            timer2 = 1f;
+            timer1 = 1;
+        }
+    }
+
+    private void StartExplosion()
+    {
+        animator.StartRecording(5);
+        animator.SetTrigger("go");
+        audioSource.Play();
+    }
+
+    private void FinishExposion()
+    {
+        undo.history.Peek().Add(gameObject, transform.position);
+        gameObject.SetActive(false);
+        timer2 = 1f;
+        timer1 = 1;
     }
 }

@@ -5,22 +5,20 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Ink.Runtime;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager : InGameMenuManager
 {
-    [SerializeField] public GameObject PauseMenu;
-    private bool PauseIsActive;
+    [SerializeField] public GameObject MenuPanel;
 
     [SerializeField] public GameObject HelpMenu;
     private bool HelpIsPlaying;
 
     [SerializeField] public GameObject SettingsMenu;
 
-    [SerializeField] public GameObject Player;
-    movePlayer MPScript;
-
     [SerializeField] public GameObject HintButton;
     private int HintCounter;
     private Story CurrentHint;
+
+    [SerializeField] public GameObject ApproveMenu;
 
     [SerializeField] TextAsset inkJSON;
 
@@ -42,44 +40,42 @@ public class PauseManager : MonoBehaviour
         return instance;
     }
 
-    private void Start()
+    private new void Start()
     {
-        PauseIsActive = false;
-        PauseMenu.SetActive(false);
-        SettingsMenu.SetActive(false); 
+        base.Start();
+
+        SettingsMenu.SetActive(false);
         HelpMenu.SetActive(false);
 
         HintCounter = 0;
-       
-        Player = GameObject.Find("Player");
     }
 
     private void Update()
     {
-        MPScript = Player.GetComponent<movePlayer>();
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!PauseIsActive)
-            {
-                EnterPauseMode();
-            }
-            else
+            if (PauseIsActive && Menu.activeSelf)
             {
                 if (HelpMenu.activeSelf)
                 {
-                    HelpMenu.SetActive(false);
-                    PauseMenu.SetActive(true);
+                    CloseSubMenu(HelpMenu);
                 }
                 else if (SettingsMenu.activeSelf)
                 {
-                    SettingsMenu.SetActive(false);
-                    PauseMenu.SetActive(true);
+                    CloseSubMenu(SettingsMenu);
+                }
+                else if (ApproveMenu.activeSelf)
+                {
+                    CloseSubMenu(ApproveMenu);
                 }
                 else
                 {
-                    ExitPauseMode();
+                    CloseMenu();
                 }
+            }
+            else if (!PauseIsActive)
+            {
+                OpenMenu();
             }
         }
 
@@ -98,40 +94,28 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    private void CloseSubMenu(GameObject subMenu)
+    {
+        subMenu.SetActive(false);
+        MenuPanel.SetActive(true);
+    }
+
     public void ReturnPressed()
     {
-        ExitPauseMode();
+        CloseMenu();
     }
 
     public void ButtonHelpPressed()
     {
-        if (HintCounter == 0)
-        {
-            PauseManager.GetInstance().EnterHelpMode(inkJSON);
-            HintCounter += 1;
-        }
+        HintButton.SetActive(true);
+        EnterHelpMode(inkJSON);
+        HintCounter = 1;
     }
 
-        public void ButtonHintPressed()
+    public void ButtonHintPressed()
     {
         ContinueHint();
         HintCounter += 1;
-    }
-
-    private void EnterPauseMode()
-    {
-        PauseIsActive = true;
-        PauseMenu.SetActive(true);
-        Time.timeScale = 0.0f;
-        MPScript.PauseMenu = true;
-    }
-
-    private void ExitPauseMode()
-    {   
-        PauseIsActive = false;
-        PauseMenu.SetActive(false);
-        Time.timeScale = 1.0f;
-        MPScript.PauseMenu = false;
     }
 
     private void ContinueHint()

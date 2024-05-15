@@ -9,5 +9,4 @@ public class RestartButton : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    
 }
