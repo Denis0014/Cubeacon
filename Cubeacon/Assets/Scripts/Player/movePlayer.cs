@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class movePlayer : InteractiveObject
 {
+    public ParticleSystem dust;
     public Animator animator;
     public bool PauseMenu;
     private SpriteRenderer sr;
@@ -24,21 +25,25 @@ public class movePlayer : InteractiveObject
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 TryMoveUp();
+                
             }
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 TryMoveLeft();
+                
             }
 
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 TryMoveDown();
+                
             }
 
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 TryMoveRight();
+                
             }
         }
     }
@@ -48,6 +53,7 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(0, 1), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Up");
+            CreateDust();
         }
     }
 
@@ -56,6 +62,7 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(-1, 0), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Go");
+            CreateDust();
         }
         sr.flipX = true;
     }
@@ -65,6 +72,7 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(0, -1), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Down");
+            CreateDust();
         }
     }
 
@@ -73,7 +81,12 @@ public class movePlayer : InteractiveObject
         if (TryToMove(new Vector2(1, 0), new Dictionary<GameObject, Vector3>(), undo))
         {
             animator.SetTrigger("Go");
+            CreateDust();
         }
         sr.flipX = false;
+    }
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
