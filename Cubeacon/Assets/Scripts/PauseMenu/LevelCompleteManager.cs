@@ -23,6 +23,13 @@ public class LevelCompleteManager : InGameMenuManager
         return instance;
     }
 
+    public void NextLevelPressed()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        string nextScene = (int.Parse(currentScene) + 1).ToString();
+        SceneManager.LoadScene(nextScene);
+    }
+
     public void ExitPressed()
     {
         SceneManager.LoadScene("Levels");
