@@ -17,7 +17,7 @@ public class Beacon : MonoBehaviour
 
     protected virtual void CreateRays()
     {
-        GameObject rayObject = Instantiate(rayPrefab, transform.position, Quaternion.identity);
+        GameObject rayObject = Instantiate(rayPrefab, transform.position + new Vector3(0, 0, 1), Quaternion.identity);
         r = rayObject.GetComponent<RayRenderer>();
         r.SetSpeed(xSpeed, ySpeed);
     }
