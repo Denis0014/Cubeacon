@@ -5925,6 +5925,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: a5edfd1e485efef4eb8dbe744119b92c, type: 3}
+    - target: {fileID: 6715962630347551849, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
 --- !u!1 &1332551226

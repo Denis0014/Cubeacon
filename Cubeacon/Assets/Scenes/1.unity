@@ -3019,6 +3019,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReastartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 6636752004600130435, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1151728944}
+    - target: {fileID: 6636752004600130435, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6636752004756696831, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -3173,6 +3181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+--- !u!1 &1151728944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6636752005522041968, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
+  m_PrefabInstance: {fileID: 1151728943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1351407725 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5276396923373786194, guid: fc0b398eb6bd7ae4f8b5ce49206cb933, type: 3}
