@@ -36,7 +36,7 @@ public class Undo : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if (history.Count > 0)
             {
