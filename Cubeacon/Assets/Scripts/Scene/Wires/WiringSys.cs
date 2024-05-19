@@ -15,8 +15,8 @@ public abstract class WiringSys : MonoBehaviour
     public List<Vector3> end_poses;
     protected List<GameObject> wires;
     public GameObject wirePrefab;
-    protected Color32 activated_wires_color = new Color32(128, 48, 48, 255);
-    protected Color32 deactivated_wires_color = new Color32(32, 96, 32, 255);
+    protected Color32 activated_wires_color = new Color32(255, 64, 64, 255);
+    protected Color32 deactivated_wires_color = new Color32(128, 255, 128, 255);
     protected Color32 activated_color = new Color32(0, 255, 0, 255);
     protected Color32 deactivated_color = new Color32(255, 255, 255, 255);
     [Space]

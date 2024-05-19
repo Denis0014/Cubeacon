@@ -23,13 +23,11 @@ public class Door : WiringSys
         {
             gameObject.layer = 11;
             gameObject.transform.position = pos1;
-            gameObject.tag = "Untagged";
         }
         else
         {
             gameObject.layer = 8;
             gameObject.transform.position = pos0;
-            gameObject.tag = "Blocks movement";
         }
     }
 
