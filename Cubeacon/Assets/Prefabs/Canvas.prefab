@@ -2335,7 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 6636752004762195605}
-  Player: {fileID: 0}
+  Player: {fileID: 7646104612894577636, guid: 1f893cbc67957264bba45a55c8adaf29, type: 3}
   MenuPanel: {fileID: 6636752005522041968}
   HelpMenu: {fileID: 6636752005202453099}
   SettingsMenu: {fileID: 6636752006403056113}
